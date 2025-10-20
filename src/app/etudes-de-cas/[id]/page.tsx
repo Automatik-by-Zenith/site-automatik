@@ -1,12 +1,6 @@
-import caseStudiesData from "@/data/caseStudies.json";
-import { EtudeDeCasDetailClient } from "./EtudeDeCasDetail";
+"use client";
 
-// Generate static params for static export
-export function generateStaticParams() {
-  return caseStudiesData.map((study) => ({
-    id: study.id,
-  }));
-}
+import { EtudeDeCasDetailClient } from "./EtudeDeCasDetail";
 
 export default function EtudeDeCasDetailPage() {
   return <EtudeDeCasDetailClient />;

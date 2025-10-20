@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight } from "lucide-react";
 import { ScrollToLeadMagnetButton } from "@/components/ui/ScrollToLeadMagnetButton";
 import { IconCard } from "@/components/ui/icon-card";
