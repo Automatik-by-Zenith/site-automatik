@@ -8,20 +8,11 @@ import { ScrollToTop } from "@/components/utilities/ScrollToTop";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ArrowRight, Clock, TrendingUp, Star, Users, Zap, CheckCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, TrendingUp } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import caseStudiesData from "@/data/caseStudies.json";
-import { CaseStudy, CaseStudyHighlight, IconMap } from "@/types/caseStudy";
-
-// Icon mapping
-const iconMap: IconMap = {
-  Clock,
-  TrendingUp,
-  Star,
-  Users,
-  Zap,
-  CheckCircle,
-};
+import { CaseStudy, CaseStudyHighlight } from "@/types/caseStudy";
+import { iconMap } from "@/config/icons";
 
 export function EtudeDeCasDetailClient() {
   const params = useParams();

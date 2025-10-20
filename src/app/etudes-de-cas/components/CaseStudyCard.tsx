@@ -1,8 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, TrendingUp, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { iconMap } from "@/config/icons";
+import { toolLogos, toolNames } from "@/config/tools";
 
 interface Metric {
   label: string;
@@ -18,30 +20,6 @@ interface CaseStudyCardProps {
   tools: string[];
   metrics: Metric[];
 }
-
-const iconMap = {
-  Clock,
-  TrendingUp,
-  CheckCircle,
-};
-
-const toolLogos: Record<string, string> = {
-  openai: "/assets/logos/openai.svg",
-  n8n: "/assets/logos/n8n.png",
-  google: "/assets/logos/google.png",
-  gmail: "/assets/logos/gmail.svg",
-  messenger: "/assets/logos/messenger.png",
-  notion: "/assets/logos/notion.png",
-};
-
-const toolNames: Record<string, string> = {
-  openai: "OpenAI",
-  n8n: "n8n",
-  google: "Google",
-  gmail: "Gmail",
-  messenger: "Messenger",
-  notion: "Notion",
-};
 
 const getToolPosition = (index: number, total: number) => {
   const positions = [

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ThemeToggle } from "@/components/utilities/ThemeToggle";
 import { Logo } from "./Logo";
 import { useThrottledScroll } from "@/hooks/useThrottledScroll";
+import { navItems, navCtaButton } from "@/config/navigation";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,21 +28,18 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link href="/services" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link href="/etudes-de-cas" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              Études de cas
-            </Link>
-            <Link href="/a-propos" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              À propos
-            </Link>
-            <Link href="/faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              FAQ
-            </Link>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
             <ThemeToggle />
             <Button size="sm" className="bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-primary-foreground" asChild>
-              <Link href="/reservation">Réserver un appel</Link>
+              <Link href={navCtaButton.href}>{navCtaButton.label}</Link>
             </Button>
           </div>
 
@@ -59,36 +57,18 @@ export const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden py-4 space-y-3 animate-in slide-in-from-top-2 duration-200">
-            <Link
-              href="/services"
-              className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-muted transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/etudes-de-cas"
-              className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-muted transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Études de cas
-            </Link>
-            <Link
-              href="/a-propos"
-              className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-muted transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              À propos
-            </Link>
-            <Link
-              href="/faq"
-              className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-muted transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              FAQ
-            </Link>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-muted transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
             <Button size="sm" className="w-full bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-primary-foreground" asChild>
-              <Link href="/reservation" onClick={() => setIsOpen(false)}>Réserver un appel</Link>
+              <Link href={navCtaButton.href} onClick={() => setIsOpen(false)}>{navCtaButton.label}</Link>
             </Button>
           </div>
         )}
