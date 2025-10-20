@@ -47,7 +47,7 @@ const processSteps = [
     number: "03",
     icon: Users,
     title: "Transfert & autonomie",
-    description: "Nous documentons chaque workflow, formons vos collaborateurs et transmettons les outils. Vous gardez le contrôle complet — sans dépendance, sans zone grise.",
+    description: "Nous documentons chaque processus, formons vos collaborateurs et transmettons les outils. Vous gardez le contrôle complet — sans dépendance, sans zone grise.",
   },
 ];
 
@@ -94,12 +94,12 @@ const About = () => {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto">
-                Nous aidons les entreprises à se concentrer sur ce qui crée réellement de la valeur, en supprimant les tâches répétitives pour redonner du sens et du temps aux équipes.
+                Nous aidons les entreprises à se concentrer sur ce qui crée réellement de la valeur, en supprimant les tâches répétitives pour redonner du temps aux équipes.
               </p>
               <Card variant="glass">
                 <CardContent className="p-8 space-y-6">
               <p className="text-lg leading-relaxed">
-                Chez <strong>Automatik by Zenith</strong>, nous croyons que la technologie n'a de valeur que si elle rend la vie plus simple. Nous concevons des automatisations utiles, mesurables et durables — pas pour impressionner, mais pour améliorer le quotidien.
+                Chez <strong>Automatik by Zenith</strong>, nous croyons que la technologie n'a de valeur que si elle rend la vie plus simple. Nous concevons des automatisations utiles, mesurables et durables pour améliorer le quotidien.
               </p>
               <BlockQuote>
                 Automatiser, ce n'est pas faire moins d'humain. C'est rendre à l'humain le temps de créer de la valeur.
@@ -129,7 +129,7 @@ const About = () => {
                 </span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                Le craftsmanship appliqué à l'automatisation
+                L'Artisanat appliqué à l'automatisation
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Automatik by Zenith est née d'une conviction : l'automatisation doit être rigoureuse, claire et humaine. Nous appliquons la qualité artisanale du développement logiciel à la création de processus automatisés fiables et compréhensibles.
@@ -256,7 +256,7 @@ const About = () => {
               <Card variant="glass">
                 <CardContent className="p-8">
                   <p className="text-lg leading-relaxed text-center">
-                    Automatik by Zenith repose sur la complémentarité de ses deux cofondateurs — un expert technique et un responsable commercial — entourés d'un réseau d'experts en développement, automatisation et formation. Nous travaillons en full remote, convaincus qu'un esprit libre conçoit de meilleures solutions.
+                    Automatik by Zenith repose sur la complémentarité de ses deux cofondateurs — un expert technique et un responsable commercial — entourés d'un réseau d'experts en développement, automatisation et formation. Nous travaillons en full remote, convaincus qu'un meilleur cadre de vie à un grand impact sur la qualité du travail accomplis.
                   </p>
                 </CardContent>
               </Card>

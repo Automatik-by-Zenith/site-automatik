@@ -15,13 +15,13 @@ const useCases = [
     icon: Code,
     title: "Développement web & logiciels sur-mesure",
     description:
-      "Du MVP au projet complet, avec les standards du software craftsmanship. Des bases solides et durables pour vos applications.",
+      "Du prototypage au projet complet, avec les standards de l'Artisanat numérique. Des bases solides et durables pour vos applications.",
   },
   {
     icon: Workflow,
     title: "Automatisation des processus métiers",
     description:
-      "Analyse, conception et déploiement de workflows automatisés, low-code ou développés sur mesure. Objectif : libérer vos équipes des tâches répétitives et fiabiliser vos flux quotidiens.",
+      "Analyse, conception et déploiement de processus automatisés, low-code ou développés sur mesure. Objectif : libérer vos équipes des tâches répétitives et fiabiliser vos flux quotidiens.",
   },
   {
     icon: GraduationCap,

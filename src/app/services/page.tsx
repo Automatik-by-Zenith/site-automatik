@@ -38,7 +38,7 @@ const ServicesPage = () => {
                 <span className="text-base font-light text-muted-foreground/70">by Zenith</span>, nous allions conseil, développement et formation pour bâtir des systèmes clairs, robustes et évolutifs.
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Chaque mission est menée avec la rigueur du craftsmanship : précision, transparence et exigence à chaque étape.
+                Chaque mission est menée avec la rigueur de l'Artisanat : précision, transparence et exigence à chaque étape.
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ const ServicesPage = () => {
               </div>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Garder la vision claire, du cadrage à la livraison
+                Garder une vision claire, cadrage à la livraison
               </p>
 
               <p className="text-base text-muted-foreground mb-8 leading-relaxed">
@@ -195,7 +195,7 @@ const ServicesPage = () => {
               </div>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Des workflows fiables, mesurables et durables
+                Des processus fiables, mesurables et durables
               </p>
 
               <p className="text-base text-muted-foreground mb-8 leading-relaxed">

@@ -1,5 +1,3 @@
-import teamImage from "@/assets/team-collaboration.png";
-
 export const WhyUs = () => {
   return (
     <section className="relative w-full h-full py-20">
@@ -15,12 +13,11 @@ export const WhyUs = () => {
             </h2>
             <div className="space-y-4">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Parce que nous croyons qu'une bonne automatisation ne se limite pas à "faire gagner du temps" : elle doit
-                être fiable, maîtrisable et comprise par ceux qui l'utilisent.
+                Parce qu'une bonne automatisation, ce n'est pas juste du temps gagné.
+                C'est un système fiable, maîtrisé et compris par ceux qui l'utilisent.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Nous articulons conseil stratégique, ingénierie IA et accompagnement du changement pour des résultats
-                tangibles : moins d'erreurs, plus de clarté opérationnelle et des équipes réellement autonomes.
+                Nous concevons, intégrons et formons pour que chaque automatisation soit solide, lisible et utile au quotidien.
               </p>
             </div>
           </div>
@@ -28,7 +25,7 @@ export const WhyUs = () => {
 
         <div className="max-w-4xl mx-auto w-full pb-4">
           <img
-            src={teamImage.src || (teamImage as any)}
+            src="/assets/team-collaboration.png"
             alt="Équipe collaborant sur un processus d'automatisation"
             className="w-full h-auto rounded-lg"
           />
