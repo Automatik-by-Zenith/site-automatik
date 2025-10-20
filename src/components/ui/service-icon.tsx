@@ -15,7 +15,7 @@ export const ServiceIcon = ({ icon: Icon, className, iconClassName }: ServiceIco
         className
       )}
     >
-      <Icon className={cn("w-8 h-8 text-primary", iconClassName)} />
+      <Icon className={cn("w-8 h-8 text-primary", iconClassName)} aria-hidden="true" />
     </div>
   );
 };

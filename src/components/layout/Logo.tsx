@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GradientText } from "@/components/ui/GradientText";
 
 interface LogoProps {
@@ -8,11 +9,14 @@ interface LogoProps {
 export const Logo = ({ variant = "default", className = "" }: LogoProps) => {
   return (
     <div className={`inline-flex items-center gap-2 ${className}`}>
-      <img
+      <Image
         src="/assets/logo-zenith.svg"
         alt="Zenith Logo"
+        width={48}
+        height={48}
         className="h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
         style={{ filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.3))' }}
+        priority
       />
       <div>
         {variant === "gradient" ? (

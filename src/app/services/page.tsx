@@ -72,19 +72,19 @@ const ServicesPage = () => {
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Une gouvernance fluide et documentée</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Des arbitrages clairs et fondés sur les données</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Des projets livrés dans le bon rythme, sans perte de sens</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Une direction produit exigeante, qui parle autant le langage métier que technique.</span>
                     </li>
                   </ul>
@@ -94,7 +94,7 @@ const ServicesPage = () => {
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
                 <Link href="/contact">
                   Discuter d'un projet de pilotage
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -128,15 +128,15 @@ const ServicesPage = () => {
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Applications et portails internes</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Espaces clients et extranets</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Tableaux de bord et interfaces de pilotage</span>
                     </li>
                   </ul>
@@ -155,19 +155,19 @@ const ServicesPage = () => {
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Expérience fluide et données cohérentes</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Outils durables et évolutifs</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Décisions facilitées par une meilleure visibilité</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Un développement mené comme un artisanat : sobre, solide, documenté.</span>
                     </li>
                   </ul>
@@ -177,7 +177,7 @@ const ServicesPage = () => {
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
                 <Link href="/contact">
                   Démarrer un projet web
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -211,19 +211,19 @@ const ServicesPage = () => {
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Diagnostic des flux et identification des leviers à fort impact</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Conception et validation par itérations courtes</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Déploiement, tests et formation des équipes</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Suivi et amélioration continue</span>
                     </li>
                   </ul>
@@ -237,19 +237,19 @@ const ServicesPage = () => {
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Réduction des erreurs et des délais</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Visibilité totale sur vos opérations</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Sérénité et continuité d'activité</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Une automatisation conçue comme un produit, avec la même exigence de qualité qu'un logiciel.</span>
                     </li>
                   </ul>
@@ -259,7 +259,7 @@ const ServicesPage = () => {
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
                 <Link href="/contact">
                   Démarrer un projet d'automatisation
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -294,19 +294,19 @@ const ServicesPage = () => {
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>Low-code et automatisation de processus</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>Usage raisonné et efficace de l'intelligence artificielle</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>Acculturation aux nouveaux usages et enjeux de l'IA</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>Nouvelles méthodes de développement assistées par IA</span>
                       </li>
                     </ul>
@@ -320,15 +320,15 @@ const ServicesPage = () => {
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>Sessions courtes ou journées complètes, en visio ou présentiel</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>Supports PDF, replays et exercices pratiques</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>Option coaching post-formation (30 / 60 / 90 jours)</span>
                       </li>
                     </ul>
@@ -343,19 +343,19 @@ const ServicesPage = () => {
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Des équipes autonomes et responsables</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Une meilleure qualité de production et de décision</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>Une culture de la performance durable</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>La formation comme un savoir-faire, pas un savoir-dire : transmettre avec exigence, pour former des concepteurs, pas des exécutants.</span>
                     </li>
                   </ul>
@@ -365,7 +365,7 @@ const ServicesPage = () => {
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
                 <Link href="/contact">
                   Réserver votre formation
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -416,7 +416,7 @@ const ServicesPage = () => {
               >
                 <Link href="/contact">
                   Réserver un créneau
-                  <Calendar className="ml-2 w-4 h-4" />
+                  <Calendar className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>

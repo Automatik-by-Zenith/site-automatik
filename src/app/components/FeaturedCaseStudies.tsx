@@ -28,7 +28,7 @@ export const FeaturedCaseStudies = () => {
           <Button size="lg" variant="outline" className="group" asChild>
             <Link href="/etudes-de-cas">
               Voir toutes les études de cas
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
           </Button>
         </div>

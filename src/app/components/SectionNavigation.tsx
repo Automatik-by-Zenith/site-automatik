@@ -52,7 +52,7 @@ export const SectionNavigation = () => {
   };
 
   return (
-    <nav className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden xl:block">
+    <nav aria-label="Section navigation" className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden xl:block">
       <div className="glass-card p-2 space-y-1 rounded-full">
         {sections.map((section) => {
           const Icon = section.icon;
@@ -64,13 +64,14 @@ export const SectionNavigation = () => {
               onClick={() => scrollToSection(section.id)}
               className={cn(
                 "group relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300",
-                isActive 
-                  ? "bg-primary text-primary-foreground" 
+                isActive
+                  ? "bg-primary text-primary-foreground"
                   : "hover:bg-accent text-muted-foreground hover:text-accent-foreground"
               )}
-              aria-label={section.label}
+              aria-label={`Naviguer vers ${section.label}`}
+              aria-pressed={isActive}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-4 h-4" aria-hidden="true" />
               
               {/* Tooltip */}
               <span className="absolute right-full mr-4 px-3 py-2 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 whitespace-nowrap shadow-lg border">

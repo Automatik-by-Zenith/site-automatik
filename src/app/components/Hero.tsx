@@ -33,7 +33,7 @@ export const Hero = () => {
             >
               <a href="/reservation">
                 Réserver un RDV visio de 30 min
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </Button>
           </div>

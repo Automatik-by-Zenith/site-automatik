@@ -43,7 +43,7 @@ export function EtudeDeCasDetailClient() {
             <h1 className="text-4xl font-bold">Étude de cas non trouvée</h1>
             <Button asChild>
               <Link href="/etudes-de-cas">
-                <ArrowLeft className="mr-2 w-4 h-4" />
+                <ArrowLeft className="mr-2 w-4 h-4" aria-hidden="true" />
                 Retour aux études de cas
               </Link>
             </Button>
@@ -63,7 +63,7 @@ export function EtudeDeCasDetailClient() {
           <div className="max-w-4xl mx-auto">
             <Button variant="ghost" asChild className="mb-6">
               <Link href="/etudes-de-cas">
-                <ArrowLeft className="mr-2 w-4 h-4" />
+                <ArrowLeft className="mr-2 w-4 h-4" aria-hidden="true" />
                 Retour aux études de cas
               </Link>
             </Button>
@@ -85,7 +85,7 @@ export function EtudeDeCasDetailClient() {
               return (
                 <Card key={idx} variant="glass">
                   <CardContent className="p-6 text-center space-y-2">
-                    <Icon className="w-8 h-8 mx-auto text-primary mb-2" />
+                    <Icon className="w-8 h-8 mx-auto text-primary mb-2" aria-hidden="true" />
                     <p className="text-sm text-muted-foreground">{highlight.label}</p>
                     <p className="text-2xl font-bold">{highlight.value}</p>
                   </CardContent>
@@ -160,7 +160,7 @@ export function EtudeDeCasDetailClient() {
               >
                 <Link href="/contact">
                   Réserver un RDV visio de 30 min
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>

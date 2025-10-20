@@ -109,7 +109,7 @@ const About = () => {
                 <Button asChild size="lg" className="group bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
                   <Link href="/services">
                     Découvrir nos services
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 </Button>
               </div>
@@ -293,7 +293,7 @@ const About = () => {
                     <Button asChild size="lg" className="group bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
                       <Link href="/contact">
                         Réserver un RDV visio de 30 min
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                       </Link>
                     </Button>
                     <p className="text-sm text-muted-foreground">

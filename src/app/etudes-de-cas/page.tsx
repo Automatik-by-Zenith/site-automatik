@@ -58,6 +58,8 @@ export default function EtudesDeCas() {
                 variant={selectedCategory === cat.id ? "default" : "outline"}
                 onClick={() => setSelectedCategory(cat.id)}
                 className="rounded-full"
+                aria-pressed={selectedCategory === cat.id}
+                aria-label={`Filtrer par ${cat.label}`}
               >
                 {cat.label}
               </Button>
@@ -106,7 +108,7 @@ export default function EtudesDeCas() {
               >
                 <Link href="/contact">
                   Réserver un RDV visio de 30 min
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>

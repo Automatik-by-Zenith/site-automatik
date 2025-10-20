@@ -101,7 +101,7 @@ const FAQ = () => {
             <div className="max-w-4xl mx-auto">
               <Card variant="glass" className="h-full">
                 <CardContent className="p-12 text-center space-y-6">
-                  <MessageCircle className="w-16 h-16 text-primary mx-auto" />
+                  <MessageCircle className="w-16 h-16 text-primary mx-auto" aria-hidden="true" />
                   <h3 className="text-3xl font-bold">Vous n'avez pas trouvé votre réponse ?</h3>
                   <p className="text-lg text-muted-foreground">
                     Notre équipe est là pour répondre à toutes vos questions

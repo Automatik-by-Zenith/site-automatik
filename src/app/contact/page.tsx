@@ -120,7 +120,7 @@ const Contact = () => {
                     {errors.acceptTerms && <p className="text-sm text-destructive">{errors.acceptTerms.message}</p>}
 
                     <Button type="submit" size="lg" className="w-full bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
-                      <Send className="mr-2 w-4 h-4" />
+                      <Send className="mr-2 w-4 h-4" aria-hidden="true" />
                       Envoyer le message
                     </Button>
                   </form>

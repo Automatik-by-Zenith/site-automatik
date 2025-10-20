@@ -47,7 +47,7 @@ export const FAQSection = () => {
                 className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all duration-300 text-lg font-medium group mt-4"
               >
                 Voir toutes les questions
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </div>
           </div>

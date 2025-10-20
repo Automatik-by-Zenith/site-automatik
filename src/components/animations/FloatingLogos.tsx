@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 interface Logo {
   src: string;
@@ -224,11 +225,14 @@ export const FloatingLogos = () => {
               height: `${logo.size}px`,
             }}
           >
-            <img
+            <Image
               src={logo.src}
               alt={logo.alt}
+              width={logo.size}
+              height={logo.size}
               className="w-full h-full object-contain"
               style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.15))" }}
+              loading="lazy"
             />
           </div>
         </div>

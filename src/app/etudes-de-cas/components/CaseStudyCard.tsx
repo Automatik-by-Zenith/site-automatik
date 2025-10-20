@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -70,7 +71,14 @@ export const CaseStudyCard = React.memo(({ id, title, summary, client, tools, me
               }}
               title={toolNames[tool]}
             >
-              <img src={toolLogos[tool]} alt={toolNames[tool]} className="w-full h-full object-contain" />
+              <Image
+                src={toolLogos[tool]}
+                alt={toolNames[tool]}
+                width={tool === "n8n" ? 144 : 96}
+                height={tool === "n8n" ? 144 : 96}
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
             </div>
           );
         })}
@@ -87,7 +95,7 @@ export const CaseStudyCard = React.memo(({ id, title, summary, client, tools, me
             const Icon = iconMap[metric.icon as keyof typeof iconMap];
             return (
               <div key={idx} className="flex items-center gap-2 text-sm">
-                <Icon className="w-4 h-4 text-primary" />
+                <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
                 <span className="text-muted-foreground">{metric.label}:</span>
                 <span className="font-semibold ml-auto">{metric.value}</span>
               </div>
@@ -101,7 +109,7 @@ export const CaseStudyCard = React.memo(({ id, title, summary, client, tools, me
         >
           <Link href={`/etudes-de-cas/${id}`}>
             Lire l'étude
-            <ArrowRight className="ml-2 w-4 h-4" />
+            <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
           </Link>
         </Button>
       </CardContent>

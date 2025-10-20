@@ -15,7 +15,7 @@ export const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div className="space-y-4">
+          <nav aria-label="Footer navigation" className="space-y-4">
             <h3 className="font-semibold text-base">Navigation</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/" className="hover:text-primary transition-colors">Accueil</a></li>
@@ -23,10 +23,10 @@ export const Footer = () => {
               <li><a href="/a-propos" className="hover:text-primary transition-colors">À propos</a></li>
               <li><a href="/faq" className="hover:text-primary transition-colors">FAQ</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Services */}
-          <div className="space-y-4">
+          <nav aria-label="Services navigation" className="space-y-4">
             <h3 className="font-semibold text-base">Nos Services</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/services#direction" className="hover:text-primary transition-colors">Direction de projets IA</a></li>
@@ -34,26 +34,26 @@ export const Footer = () => {
               <li><a href="/services#automatisation" className="hover:text-primary transition-colors">Automatisation</a></li>
               <li><a href="/services#formation" className="hover:text-primary transition-colors">Formation IA</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
           <div className="space-y-4">
             <h3 className="font-semibold text-base">Contact</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4" aria-hidden="true" />
                 <a href="mailto:contact@automatik.com" className="hover:text-primary transition-colors">
                   contact@automatik.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 <a href="tel:+33123456789" className="hover:text-primary transition-colors">
                   +33 1 23 45 67 89
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-1" />
+                <MapPin className="w-4 h-4 mt-1" aria-hidden="true" />
                 <span>Paris, France</span>
               </li>
             </ul>

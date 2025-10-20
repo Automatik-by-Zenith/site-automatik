@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/utilities/ThemeToggle";
 import { Logo } from "./Logo";
@@ -12,13 +12,59 @@ import { navItems, navCtaButton } from "@/config/navigation";
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useThrottledScroll(() => {
     setIsScrolled(window.scrollY > 20);
   }, 100);
 
+  // Handle Escape key and focus trap
+  useEffect(() => {
+    if (!isOpen) return;
+
+    // Handle Escape key
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+
+      // Handle Tab and Shift+Tab for focus trap
+      if (e.key === 'Tab') {
+        const mobileMenu = mobileMenuRef.current;
+        if (!mobileMenu) return;
+
+        const focusableElements = mobileMenu.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        const focusableArray = Array.from(focusableElements);
+
+        if (focusableArray.length === 0) return;
+
+        const firstElement = focusableArray[0];
+        const lastElement = focusableArray[focusableArray.length - 1];
+        const activeElement = document.activeElement as HTMLElement;
+
+        // Shift+Tab on first element: go to last
+        if (e.shiftKey && activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+        // Tab on last element: go to first
+        else if (!e.shiftKey && activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
   return (
-    <nav className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-500 ${isScrolled ? 'bg-background/95 border-b border-border/50' : 'bg-transparent border-b border-transparent'}`}>
+    <nav aria-label="Main navigation" className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-500 ${isScrolled ? 'bg-background/95 border-b border-border/50' : 'bg-transparent border-b border-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-16' : 'h-20'}`}>
           {/* Logo */}
@@ -45,6 +91,7 @@ export const Navigation = () => {
 
           {/* Mobile menu button */}
           <button
+            ref={menuButtonRef}
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors text-foreground"
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -56,7 +103,10 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 space-y-3 animate-in slide-in-from-top-2 duration-200">
+          <div
+            ref={mobileMenuRef}
+            className="lg:hidden py-4 space-y-3 animate-in slide-in-from-top-2 duration-200"
+          >
             {navItems.map((item) => (
               <Link
                 key={item.href}
