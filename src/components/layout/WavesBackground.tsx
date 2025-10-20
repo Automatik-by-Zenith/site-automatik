@@ -3,15 +3,6 @@
 import { useEffect, useRef } from "react";
 import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 
-interface Star {
-  x: number;
-  y: number;
-  size: number;
-  speedY: number;
-  opacity: number;
-  baseY: number;
-}
-
 interface Wave {
   y: number;
   baseY: number;
@@ -29,14 +20,12 @@ interface Wave {
   lineWidth: number;
 }
 
-export const StarryBackground = () => {
+export const WavesBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const starsRef = useRef<Star[]>([]);
   const wavesRef = useRef<Wave[]>([]);
   const waveOffsetRef = useRef(0);
   const scrollYRef = useRef(0);
   const prevScrollYRef = useRef(0);
-  const animationTimeRef = useRef(0);
   const animationFrameIdRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -49,30 +38,7 @@ export const StarryBackground = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      initStars();
       initWaves();
-    };
-
-    const initStars = () => {
-      const stars: Star[] = [];
-      const numStars = 200;
-
-      for (let i = 0; i < numStars; i++) {
-        const rand = Math.random();
-        const size = rand < 0.8 ? Math.random() * 0.8 + 0.3 : Math.random() * 1.2 + 0.8;
-        const baseY = Math.random() * canvas.height;
-
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: baseY,
-          size: size,
-          speedY: Math.random() * 0.3 + 0.1,
-          opacity: Math.random() * 0.4 + 0.4,
-          baseY: baseY,
-        });
-      }
-
-      starsRef.current = stars;
     };
 
     const initWaves = () => {
@@ -117,9 +83,7 @@ export const StarryBackground = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const scrollDelta = scrollYRef.current - prevScrollYRef.current;
-      animationTimeRef.current += 1;
 
-      // Mode clair: vagues avec mouvement proportionnel au scroll
       const baseSpeed = 0.08;
       const scrollSpeed = Math.abs(scrollDelta) * 0.75;
       waveOffsetRef.current += baseSpeed + scrollSpeed;

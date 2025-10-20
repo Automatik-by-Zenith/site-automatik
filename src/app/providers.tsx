@@ -3,7 +3,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { StarryBackground } from "@/components/layout/StarryBackground";
+import { WavesBackground } from "@/components/layout/WavesBackground";
 import { PullToRefresh } from "@/components/utilities/PullToRefresh";
 import { ScrollToTopOnRouteChange } from "@/components/utilities/ScrollToTopOnRouteChange";
 import { ReactNode } from "react";
@@ -17,7 +17,7 @@ export function RootProviders({ children }: { children: ReactNode }) {
       <Toaster />
       <Sonner />
       <ScrollToTopOnRouteChange />
-      <StarryBackground />
+      <WavesBackground />
       {children}
     </QueryClientProvider>
   );
