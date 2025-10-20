@@ -1,3 +1,5 @@
+"use client";
+
 import { Target, Code, Workflow, GraduationCap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IconCard } from "@/components/ui/icon-card";

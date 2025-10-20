@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Shield, Eye, Users, TrendingUp, Key, ArrowRight } from "lucide-react";
 import { IconCard } from "@/components/ui/icon-card";
