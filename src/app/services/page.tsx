@@ -56,7 +56,7 @@ const ServicesPage = () => {
               </div>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Garder une vision claire, cadrage à la livraison
+                Garder une vision claire, du cadrage à la livraison
               </p>
 
               <p className="text-base text-muted-foreground mb-8 leading-relaxed">
