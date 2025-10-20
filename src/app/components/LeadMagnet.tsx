@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { GradientText } from "@/components/ui/GradientText";
 
 export const LeadMagnet = () => {
   useEffect(() => {
@@ -27,9 +28,9 @@ export const LeadMagnet = () => {
           <div className="text-center space-y-6 mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold">
               Discutons de votre{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <GradientText>
                 prochain défi IA
-              </span>
+              </GradientText>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Réservez un créneau de 30 minutes en visio. Nous analyserons vos objectifs et vous 

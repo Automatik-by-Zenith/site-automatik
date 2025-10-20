@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { FloatingLogos } from "@/components/animations/FloatingLogos";
+import { GradientText } from "@/components/ui/GradientText";
 
 export const Hero = () => {
   return (
@@ -11,9 +12,9 @@ export const Hero = () => {
           {/* Main heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             L'IA et l'automatisation{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <GradientText>
               sur-mesure, façonnées avec exigence.
-            </span>
+            </GradientText>
           </h1>
 
           {/* Description */}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { GradientText } from "@/components/ui/GradientText";
 
 export const WhyUs = () => {
   return (
@@ -8,9 +9,9 @@ export const WhyUs = () => {
           <div className="text-center max-w-4xl mx-auto space-y-6">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Pourquoi{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <GradientText>
                 Automatik
-              </span>{" "}
+              </GradientText>{" "}
               ?
             </h2>
             <div className="space-y-4">

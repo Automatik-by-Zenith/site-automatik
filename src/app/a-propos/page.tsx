@@ -6,6 +6,7 @@ import { Target, Eye, Award, Users, Search, Zap, ArrowRight, Lightbulb, Rocket, 
 import Link from "next/link";
 import { IconCard } from "@/components/ui/icon-card";
 import { BlockQuote } from "@/components/ui/blockquote";
+import { GradientText } from "@/components/ui/GradientText";
 
 const values = [
   {
@@ -89,9 +90,9 @@ const About = () => {
             <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-1000">
               <h1 className="text-5xl sm:text-6xl font-bold leading-tight text-center">
                 Automatiser pour libérer le temps,{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   pas pour le remplir
-                </span>
+                </GradientText>
               </h1>
               <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto">
                 Nous aidons les entreprises à se concentrer sur ce qui crée réellement de la valeur, en supprimant les tâches répétitives pour redonner du temps aux équipes.
@@ -124,9 +125,9 @@ const About = () => {
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <h2 className="text-4xl font-bold">
                 Notre{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   philosophie
-                </span>
+                </GradientText>
               </h2>
               <p className="text-xl text-muted-foreground">
                 L'Artisanat appliqué à l'automatisation
@@ -156,9 +157,9 @@ const About = () => {
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <h2 className="text-4xl font-bold">
                 Notre{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   méthode
-                </span>
+                </GradientText>
               </h2>
               <p className="text-xl text-muted-foreground">
                 Comprendre, construire, transmettre
@@ -201,9 +202,9 @@ const About = () => {
               <div className="text-center space-y-4 mb-16">
                 <h2 className="text-4xl font-bold">
                   Notre{" "}
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <GradientText>
                     histoire
-                  </span>
+                  </GradientText>
                 </h2>
                 <p className="text-xl text-muted-foreground">
                   Une jeune agence, une exigence ancienne
@@ -244,9 +245,9 @@ const About = () => {
               <div className="text-center space-y-4">
                 <h2 className="text-4xl font-bold">
                   Notre{" "}
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <GradientText>
                     équipe
-                  </span>
+                  </GradientText>
                 </h2>
                 <p className="text-xl text-muted-foreground">
                   Une structure à taille humaine, à impact réel
@@ -271,9 +272,9 @@ const About = () => {
               <div className="text-center space-y-4">
                 <h2 className="text-4xl font-bold">
                   Notre{" "}
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <GradientText>
                     vision
-                  </span>
+                  </GradientText>
                 </h2>
                 <p className="text-xl text-muted-foreground">
                   L'automatisation, aujourd'hui là où le web était hier

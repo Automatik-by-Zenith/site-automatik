@@ -8,11 +8,12 @@ import { ScrollToTop } from "@/components/utilities/ScrollToTop";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ContentSection } from "@/components/ui/ContentSection";
 import { ArrowLeft, ArrowRight, Clock, TrendingUp } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 import caseStudiesData from "@/data/caseStudies.json";
 import { CaseStudy, CaseStudyHighlight } from "@/types/caseStudy";
 import { iconMap } from "@/config/icons";
+import { GradientText } from "@/components/ui/GradientText";
 
 export function EtudeDeCasDetailClient() {
   const params = useParams();
@@ -82,107 +83,47 @@ export function EtudeDeCasDetailClient() {
       </section>
 
       {/* Context */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Contexte</h2>
-            <Card variant="glass">
-              <CardContent className="p-8">
-                <p className="text-lg text-muted-foreground leading-relaxed">{etude.context}</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ContentSection
+        title="Contexte"
+        content={etude.context}
+        variant="default"
+      />
 
       {/* Problem */}
-      <section className="py-12 bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Problème</h2>
-            <Card variant="glass">
-              <CardContent className="p-8">
-                <ul className="space-y-3">
-                  {etude.problem.map((item: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ContentSection
+        title="Problème"
+        items={etude.problem}
+        iconElement="•"
+        variant="bg-card"
+      />
 
       {/* Solution */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Solution</h2>
-            <Card variant="glass">
-              <CardContent className="p-8">
-                <ul className="space-y-3">
-                  {etude.solution.map((item: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="text-primary mt-1">✓</span>
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Separator className="my-6" />
-                <div>
-                  <h3 className="font-semibold mb-3">Architecture & stack</h3>
-                  <p className="text-sm text-muted-foreground font-mono">{etude.stack}</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ContentSection
+        title="Solution"
+        items={etude.solution}
+        iconElement="✓"
+        variant="default"
+        footer={{
+          title: "Architecture & stack",
+          content: etude.stack
+        }}
+      />
 
       {/* Results */}
-      <section className="py-12 bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Résultats</h2>
-            <Card variant="glass">
-              <CardContent className="p-8">
-                <ul className="space-y-3">
-                  {etude.results.map((item: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <TrendingUp className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ContentSection
+        title="Résultats"
+        items={etude.results}
+        icon={TrendingUp}
+        variant="bg-card"
+      />
 
       {/* Next Steps */}
-      <section className="py-12 bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Prochaines étapes</h2>
-            <Card variant="glass">
-              <CardContent className="p-8">
-                <ul className="space-y-3">
-                  {etude.nextSteps.map((item: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ContentSection
+        title="Prochaines étapes"
+        items={etude.nextSteps}
+        icon={ArrowRight}
+        variant="bg-card"
+      />
 
       {/* CTA */}
       <section className="py-24">
@@ -191,9 +132,9 @@ export function EtudeDeCasDetailClient() {
             <div className="text-center space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold">
                 Besoin d'une solution{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   similaire ?
-                </span>
+                </GradientText>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Discutons de votre projet lors d'un rendez-vous de 30 minutes.

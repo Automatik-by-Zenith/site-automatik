@@ -1,3 +1,5 @@
+import { GradientText } from "@/components/ui/GradientText";
+
 interface LogoProps {
   variant?: "default" | "gradient";
   className?: string;
@@ -13,15 +15,15 @@ export const Logo = ({ variant = "default", className = "" }: LogoProps) => {
         style={{ filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.3))' }}
       />
       <div>
-        <h1
-          className={`text-xl font-bold leading-tight ${
-            variant === "gradient"
-              ? "bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
-              : "text-primary"
-          }`}
-        >
-          Automatik
-        </h1>
+        {variant === "gradient" ? (
+          <h1 className="text-xl font-bold leading-tight">
+            <GradientText>Automatik</GradientText>
+          </h1>
+        ) : (
+          <h1 className="text-xl font-bold leading-tight text-primary">
+            Automatik
+          </h1>
+        )}
         <p className="text-xs text-muted-foreground">by Zenith</p>
       </div>
     </div>

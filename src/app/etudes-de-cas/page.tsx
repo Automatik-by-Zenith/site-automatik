@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { CaseStudyCard } from "./components/CaseStudyCard";
 import caseStudiesData from "@/data/caseStudies.json";
+import { GradientText } from "@/components/ui/GradientText";
 
 const categories = [
   { id: "all", label: "Tous" },
@@ -36,9 +37,9 @@ export default function EtudesDeCas() {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-5xl sm:text-6xl font-bold">
               Études de{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <GradientText>
                 cas réelles
-              </span>
+              </GradientText>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Découvrez comment nos clients ont transformé leurs processus avec des solutions IA et automatisation sur mesure.
@@ -91,9 +92,9 @@ export default function EtudesDeCas() {
             <div className="text-center space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold">
                 Prêt à transformer{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   votre activité ?
-                </span>
+                </GradientText>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Discutons de votre prochain projet d'automatisation.

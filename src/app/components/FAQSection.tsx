@@ -2,6 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { allFAQs } from "@/data/faqs";
+import { GradientText } from "@/components/ui/GradientText";
 
 export const FAQSection = () => {
   // Filter only questions that should show on homepage
@@ -15,7 +16,7 @@ export const FAQSection = () => {
             {/* Left Column - Title */}
             <div className="lg:sticky lg:top-24 space-y-4">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Vos questions <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">fréquentes</span>
+                Vos questions <GradientText>fréquentes</GradientText>
               </h2>
             </div>
 

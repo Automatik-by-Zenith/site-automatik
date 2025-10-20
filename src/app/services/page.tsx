@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Workflow, Code, ArrowRight, Calendar, CheckCircle2, Target } from "lucide-react";
 import Link from "next/link";
 import { ServiceIcon } from "@/components/ui/service-icon";
+import { GradientText } from "@/components/ui/GradientText";
 
 const ServicesPage = () => {
   return (
@@ -18,9 +19,9 @@ const ServicesPage = () => {
             <div className="max-w-4xl mx-auto text-center space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                 Nos{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   services
-                </span>
+                </GradientText>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Conseil, ingénierie et accompagnement pour des solutions fiables et maîtrisables
@@ -377,9 +378,9 @@ const ServicesPage = () => {
             <div className="max-w-5xl mx-auto space-y-6">
               <h2 className="text-4xl font-bold">
                 Une approche{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   unifiée
-                </span>
+                </GradientText>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Pilotage, développement, automatisation et formation ne sont pas des services séparés —
@@ -401,9 +402,9 @@ const ServicesPage = () => {
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <h2 className="text-4xl font-bold">
                 Réserver un{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <GradientText>
                   RDV visio de 30 min
-                </span>
+                </GradientText>
               </h2>
               <p className="text-xl text-muted-foreground">
                 Session gratuite • Google Meet • Sans engagement
