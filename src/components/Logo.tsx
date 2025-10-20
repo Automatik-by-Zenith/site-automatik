@@ -1,5 +1,3 @@
-import logoZenith from "@/assets/logo-zenith.svg";
-
 interface LogoProps {
   variant?: "default" | "gradient";
   className?: string;
@@ -8,9 +6,9 @@ interface LogoProps {
 export const Logo = ({ variant = "default", className = "" }: LogoProps) => {
   return (
     <div className={`inline-flex items-center gap-2 ${className}`}>
-      <img 
-        src={logoZenith} 
-        alt="Zenith Logo" 
+      <img
+        src="/assets/logo-zenith.svg"
+        alt="Zenith Logo"
         className="h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
         style={{ filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.3))' }}
       />

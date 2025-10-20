@@ -3,12 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, TrendingUp, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import openaiLogo from "@/assets/logos/openai.svg";
-import n8nLogo from "@/assets/logos/n8n.png";
-import googleLogo from "@/assets/logos/google.png";
-import gmailLogo from "@/assets/logos/gmail.ico";
-import messengerLogo from "@/assets/logos/messenger.png";
-import notionLogo from "@/assets/logos/notion.png";
 
 interface Metric {
   label: string;
@@ -31,13 +25,13 @@ const iconMap = {
   CheckCircle,
 };
 
-const toolLogos: Record<string, any> = {
-  openai: openaiLogo,
-  n8n: n8nLogo,
-  google: googleLogo,
-  gmail: gmailLogo,
-  messenger: messengerLogo,
-  notion: notionLogo,
+const toolLogos: Record<string, string> = {
+  openai: "/assets/logos/openai.svg",
+  n8n: "/assets/logos/n8n.png",
+  google: "/assets/logos/google.png",
+  gmail: "/assets/logos/gmail.svg",
+  messenger: "/assets/logos/messenger.png",
+  notion: "/assets/logos/notion.png",
 };
 
 const toolNames: Record<string, string> = {
@@ -94,7 +88,7 @@ export const CaseStudyCard = ({ id, title, summary, client, tools, metrics }: Ca
               }}
               title={toolNames[tool]}
             >
-              <img src={toolLogos[tool].src || toolLogos[tool]} alt={toolNames[tool]} className="w-full h-full object-contain" />
+              <img src={toolLogos[tool]} alt={toolNames[tool]} className="w-full h-full object-contain" />
             </div>
           );
         })}

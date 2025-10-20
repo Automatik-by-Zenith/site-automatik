@@ -1,12 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import gmailLogo from "@/assets/logos/gmail.ico";
-import googleLogo from "@/assets/logos/google.png";
-import messengerLogo from "@/assets/logos/messenger.png";
-import n8nLogo from "@/assets/logos/n8n.png";
-import notionLogo from "@/assets/logos/notion.png";
-import openaiLogo from "@/assets/logos/openai.svg";
 
 interface Logo {
   src: string;
@@ -19,12 +13,12 @@ interface Logo {
 }
 
 const logosData: Omit<Logo, 'offsetX' | 'offsetY'>[] = [
-  { src: openaiLogo, alt: "OpenAI", x: 15, y: 20, size: 80 },
-  { src: googleLogo, alt: "Google", x: 85, y: 25, size: 72 },
-  { src: notionLogo, alt: "Notion", x: 88, y: 60, size: 68 },
-  { src: n8nLogo, alt: "n8n", x: 12, y: 65, size: 76 },
-  { src: messengerLogo, alt: "Messenger", x: 82, y: 85, size: 64 },
-  { src: gmailLogo, alt: "Gmail", x: 18, y: 88, size: 60 },
+  { src: "/assets/logos/openai.svg", alt: "OpenAI", x: 15, y: 20, size: 80 },
+  { src: "/assets/logos/google.png", alt: "Google", x: 85, y: 25, size: 72 },
+  { src: "/assets/logos/notion.png", alt: "Notion", x: 88, y: 60, size: 68 },
+  { src: "/assets/logos/n8n.png", alt: "n8n", x: 12, y: 65, size: 76 },
+  { src: "/assets/logos/messenger.png", alt: "Messenger", x: 82, y: 85, size: 64 },
+  { src: "/assets/logos/gmail.svg", alt: "Gmail", x: 18, y: 88, size: 60 },
 ];
 
 export const FloatingLogos = () => {
