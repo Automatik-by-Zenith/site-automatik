@@ -1,0 +1,217 @@
+[
+  {
+    "id": "hotel-avis-google-ia",
+    "title": "Réponses aux avis Google, 100% dans le ton de la marque",
+    "summary": "Un agent IA rédige, relit et programme l'envoi. L'équipe ne fait que valider.",
+    "subtitle": "Un agent IA rédige, relit et programme l'envoi. L'équipe ne fait que valider.",
+    "category": "hotellerie",
+    "client": "Hôtel multi-sites",
+    "sector": "Hôtellerie",
+    "tools": ["openai", "n8n", "google"],
+    "metrics": [
+      { "label": "Taux de réponse", "value": "95%", "icon": "TrendingUp" },
+      { "label": "Temps gagné/sem", "value": "12h", "icon": "Clock" },
+      { "label": "Délai réponse", "value": "2h", "icon": "CheckCircle" }
+    ],
+    "highlights": [
+      { "icon": "Clock", "label": "Temps gagné / semaine", "value": "20h → 8h" },
+      { "icon": "Star", "label": "Taux de réponse aux avis", "value": "45% → 95%" },
+      { "icon": "TrendingUp", "label": "Note moyenne", "value": "4.1 → 4.6" }
+    ],
+    "context": "Un hôtel multi-site reçoit des avis quotidiennement. Répondre vite, avec empathie et cohérence de ton, était chronophage pour la réception.",
+    "problem": [
+      "Temps perdu sur des tâches répétitives",
+      "Ton de marque inégal",
+      "Réponses tardives = impact SEO/e-réputation"
+    ],
+    "solution": [
+      "Scraping sécurisé via API des nouveaux avis (tâche planifiée)",
+      "Agent IA avec prompt de marque (empathie, lignes rouges, variantes selon note)",
+      "Génération automatique des brouillons + file d'approbation",
+      "Temporisation pour un rendu humain (pas de rafale)"
+    ],
+    "results": [
+      "Taux de réponse porté à 95% (avant 45%)",
+      "Délai moyen de réponse : 48h → 2h",
+      "Heures économisées / mois : ≈ 48h",
+      "Note moyenne stabilisée à 4.6 (+0.5)"
+    ],
+    "stack": "Make/n8n (scheduler) · API Google Business · Agent IA (GPT-5 mini) · Webhook interne · Journalisation Notion/DB",
+    "nextSteps": [
+      "Analyse de sentiment par segment (famille/pro/étranger)",
+      "A/B testing de variantes de ton",
+      "Rapports mensuels e-réputation dans Notion"
+    ]
+  },
+  {
+    "id": "hotel-agent-receptionniste-messenger",
+    "title": "Un réceptionniste virtuel qui répond en 3 secondes",
+    "summary": "Infos, disponibilités, collecte de téléphone, et escalade propre vers la réception.",
+    "subtitle": "Infos, disponibilités, collecte de téléphone, et escalade propre vers la réception.",
+    "category": "hotellerie",
+    "client": "Établissement hôtelier",
+    "sector": "Hôtellerie",
+    "tools": ["openai", "n8n", "messenger"],
+    "metrics": [
+      { "label": "Première réponse", "value": "3s", "icon": "Clock" },
+      { "label": "Leads récupérés", "value": "78%", "icon": "TrendingUp" },
+      { "label": "Résolution 1er contact", "value": "65%", "icon": "CheckCircle" }
+    ],
+    "highlights": [
+      { "icon": "Clock", "label": "Délai de première réponse", "value": "15 min → 3s" },
+      { "icon": "Users", "label": "Leads avec n° récupéré", "value": "78%" },
+      { "icon": "TrendingUp", "label": "Taux de résolution 1er contact", "value": "65%" }
+    ],
+    "context": "Le Messenger de l'hôtel saturait l'équipe (questions récurrentes, pics d'activité).",
+    "problem": [
+      "Décrochage de la productivité",
+      "Réponses inégales, sans trace structurée",
+      "Pas de priorisation ni de collecte systématique de leads"
+    ],
+    "solution": [
+      "Agent IA Réceptionniste avec persona (prénoms aléatoires, ton chaleureux)",
+      "Outils adjoints : base infos hôtel, tarifs, politiques, FAQ",
+      "Fallback propre : si info manquante → demande n° → email récap à l'équipe",
+      "Temporisation pour paraître humain + garde-fous sémantiques"
+    ],
+    "results": [
+      "Réponse instantanée < 3s",
+      "Collecte de n° : 78% des conversations éligibles",
+      "Décharge équipe : −18h/sem sur la messagerie",
+      "Satisfaction (CSAT chat) : 4.7/5"
+    ],
+    "stack": "Meta Messenger API · Make/n8n (router + mailer) · Agent IA (GPT-5 mini) · Knowledge base Notion",
+    "nextSteps": [
+      "Connexion inventaire/agenda pour réponses dispo/prix en temps réel",
+      "Voicebot en français (quand latences < 200-300 ms)"
+    ]
+  },
+  {
+    "id": "devis-instantanes-ia",
+    "title": "Du mail client au devis PDF en 90 secondes",
+    "summary": "Extraction, règles métiers, rendu, relecture humaine puis envoi.",
+    "subtitle": "Extraction, règles métiers, rendu, relecture humaine puis envoi.",
+    "category": "commercial",
+    "client": "Entreprise de services",
+    "sector": "Commercial",
+    "tools": ["openai", "n8n", "gmail"],
+    "metrics": [
+      { "label": "Temps par devis", "value": "1:30", "icon": "Clock" },
+      { "label": "Conversion", "value": "+35%", "icon": "TrendingUp" },
+      { "label": "SLA < 2h", "value": "92%", "icon": "CheckCircle" }
+    ],
+    "highlights": [
+      { "icon": "Clock", "label": "Temps par devis", "value": "45 min → 1:30" },
+      { "icon": "TrendingUp", "label": "Conversion sous 2h", "value": "32% → 67%" },
+      { "icon": "Zap", "label": "SLA réponse < 2h", "value": "92% des cas" }
+    ],
+    "context": "Traitement lent des demandes (groupes, allergies, options), avec beaucoup d'allers-retours.",
+    "problem": [
+      "Perte d'opportunités si réponse > 24h",
+      "Variabilité du chiffrage",
+      "PDFs laborieux"
+    ],
+    "solution": [
+      "Webhook email → parsing → tableau JSON (variables propres)",
+      "Agent IA applique règles tarifaires (personnes, seuils, options)",
+      "Gabarit HTML → PDF (PDF.co) + brouillon d'email",
+      "Revue commerciale (check & send)",
+      "Journalisation Notion + KPI"
+    ],
+    "results": [
+      "Temps moyen : 45 min → 1:30",
+      "Taux d'envoi < 2h : 92%",
+      "Conversion : 67% (+35%)",
+      "Heures économisées / mois : ≈ 60h"
+    ],
+    "stack": "Gmail API/webhook · Make/n8n · Agent IA (GPT-5 mini / GPT-5) · PDF.co · Notion DB",
+    "nextSteps": [
+      "Contrôle IA de second niveau (QA) avant envoi",
+      "Vérif dispo (agenda/ERP) en ligne",
+      "Signature e-IDAS intégrée"
+    ]
+  },
+  {
+    "id": "triage-emails-ia",
+    "title": "Inbox sous contrôle en quelques jours",
+    "summary": "Classement par libellés, 3 brouillons proposés, vous validez et envoyez.",
+    "subtitle": "Classement par libellés, 3 brouillons proposés, vous validez et envoyez.",
+    "category": "support",
+    "client": "PME multi-secteurs",
+    "sector": "Support client",
+    "tools": ["openai", "n8n", "gmail"],
+    "metrics": [
+      { "label": "Backlog réduit", "value": "-80%", "icon": "TrendingUp" },
+      { "label": "Temps/mail", "value": "-60%", "icon": "Clock" },
+      { "label": "Mails traités/jour", "value": "95%", "icon": "CheckCircle" }
+    ],
+    "highlights": [
+      { "icon": "TrendingUp", "label": "Backlog", "value": "1200 → 240" },
+      { "icon": "Clock", "label": "Temps de traitement/mail", "value": "8 min → 3 min" },
+      { "icon": "Zap", "label": "% mails traités / jour", "value": "95%" }
+    ],
+    "context": "Boîte de réception saturée (prospection, fournisseurs, demandes diverses).",
+    "problem": [
+      "Perte d'emails importants",
+      "Fatigue décisionnelle",
+      "Réactivité en baisse"
+    ],
+    "solution": [
+      "Agent IA de tri (intent + sentiment) → libellés",
+      "3 brouillons adaptés (positif / neutre / négatif) + variables dynamiques",
+      "File d'approbation et envoi"
+    ],
+    "results": [
+      "Backlog divisé par 5",
+      "Temps/mail : −62%",
+      "SLA interne respecté à 95%"
+    ],
+    "stack": "Gmail API · Make/n8n · Agent IA (Claude/GPT) · Notion (reporting)",
+    "nextSteps": [
+      "Apprentissage supervisé sur vos réponses golden",
+      "Règles de priorisation par contact VIP"
+    ]
+  },
+  {
+    "id": "fermage-notion-automatisation",
+    "title": "Le fermage sans tableurs ni papier",
+    "summary": "Un espace Notion structuré + automatisations email pour les quittances.",
+    "subtitle": "Un espace Notion structuré + automatisations email pour les quittances.",
+    "category": "gestion",
+    "client": "Propriétaire foncier",
+    "sector": "Gestion",
+    "tools": ["notion", "n8n", "gmail"],
+    "metrics": [
+      { "label": "Baux gérés", "value": "45", "icon": "CheckCircle" },
+      { "label": "Quittances/an", "value": "180", "icon": "TrendingUp" },
+      { "label": "Temps gagné", "value": "15h/mois", "icon": "Clock" }
+    ],
+    "highlights": [
+      { "icon": "Users", "label": "Dossiers consolidés", "value": "45 baux / 28 fermiers" },
+      { "icon": "TrendingUp", "label": "Quittances générées", "value": "180 / an" },
+      { "icon": "Clock", "label": "Temps clôture fiscale", "value": "8h → 2h" }
+    ],
+    "context": "Multiples parcelles, baux, avenants, paiements partiels, répartition familiale, impôts.",
+    "problem": [
+      "Information éparpillée, reçus papier perdus",
+      "Historique flou (quelle année payée ? quelles parcelles ?)",
+      "Clôture fiscale pénible"
+    ],
+    "solution": [
+      "Base Notion : Fermiers, Baux, Avenants, Parcelles, Paiements (relations + vues filtrées)",
+      "Automatisation : bouton Envoyer la quittance → mail brouillon avec PDF",
+      "Vues impôts : totaux par personne/année, état des paiements, anomalies"
+    ],
+    "results": [
+      "Quittances en 1 clic, 180/an",
+      "Clôture simplifiée (rapports prêts)",
+      "Temps admin : −15h/mois"
+    ],
+    "stack": "Notion DB (schéma relationnel) · Make/n8n (mailer + PDF) · Gmail API",
+    "nextSteps": [
+      "Tableau de bord paiements en retard",
+      "Rappels SMS/Email planifiés",
+      "Signature électronique pour avenants"
+    ]
+  }
+]
