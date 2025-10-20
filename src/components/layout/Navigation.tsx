@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/utilities/ThemeToggle";
 import { Logo } from "./Logo";
 import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 import { navItems, navCtaButton } from "@/config/navigation";
@@ -83,7 +82,6 @@ export const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            <ThemeToggle />
             <Button size="sm" className="bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 text-primary-foreground" asChild>
               <Link href={navCtaButton.href}>{navCtaButton.label}</Link>
             </Button>

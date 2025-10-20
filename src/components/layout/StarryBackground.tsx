@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useTheme } from "next-themes";
 import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 
 interface Star {
@@ -39,7 +38,6 @@ export const StarryBackground = () => {
   const prevScrollYRef = useRef(0);
   const animationTimeRef = useRef(0);
   const animationFrameIdRef = useRef<number | null>(null);
-  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -118,74 +116,57 @@ export const StarryBackground = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const isDark =
-        theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-
       const scrollDelta = scrollYRef.current - prevScrollYRef.current;
       animationTimeRef.current += 1;
 
-      if (isDark) {
-        // Mode sombre: étoiles avec parallax au scroll uniquement
-        const parallaxFactor = 0.25;
-        starsRef.current.forEach((star) => {
-          const parallax = scrollYRef.current * parallaxFactor * star.speedY;
-          star.y = star.baseY + parallax;
+      // Mode clair: vagues avec mouvement proportionnel au scroll
+      const baseSpeed = 0.08;
+      const scrollSpeed = Math.abs(scrollDelta) * 0.75;
+      waveOffsetRef.current += baseSpeed + scrollSpeed;
 
-          ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-          ctx.beginPath();
-          ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-          ctx.fill();
-        });
-      } else {
-        // Mode clair: vagues avec mouvement proportionnel au scroll
-        const baseSpeed = 0.08;
-        const scrollSpeed = Math.abs(scrollDelta) * 0.75;
-        waveOffsetRef.current += baseSpeed + scrollSpeed;
+      wavesRef.current.forEach((wave, index) => {
+        const timeFactor = waveOffsetRef.current * wave.amplitudeSpeed;
+        wave.amplitude = wave.baseAmplitude + Math.sin(timeFactor + wave.phaseOffset) * wave.amplitudeVariation;
 
-        wavesRef.current.forEach((wave, index) => {
-          const timeFactor = waveOffsetRef.current * wave.amplitudeSpeed;
-          wave.amplitude = wave.baseAmplitude + Math.sin(timeFactor + wave.phaseOffset) * wave.amplitudeVariation;
+        const yOffset = Math.sin(waveOffsetRef.current * wave.yVariationSpeed * 0.5) * wave.yVariationAmount;
+        wave.y = wave.baseY + yOffset;
 
-          const yOffset = Math.sin(waveOffsetRef.current * wave.yVariationSpeed * 0.5) * wave.yVariationAmount;
-          wave.y = wave.baseY + yOffset;
+        const gradient = ctx.createLinearGradient(0, wave.y, 0, canvas.height);
+        const blueIntensity = 0.08 + (index / wavesRef.current.length) * 0.12;
+        gradient.addColorStop(0, `rgba(214, 226, 245, ${blueIntensity})`);
+        gradient.addColorStop(1, `rgba(240, 245, 255, ${blueIntensity * 0.4})`);
 
-          const gradient = ctx.createLinearGradient(0, wave.y, 0, canvas.height);
-          const blueIntensity = 0.08 + (index / wavesRef.current.length) * 0.12;
-          gradient.addColorStop(0, `rgba(214, 226, 245, ${blueIntensity})`);
-          gradient.addColorStop(1, `rgba(240, 245, 255, ${blueIntensity * 0.4})`);
+        ctx.beginPath();
+        ctx.moveTo(0, wave.y);
 
-          ctx.beginPath();
-          ctx.moveTo(0, wave.y);
+        for (let x = 0; x < canvas.width; x += 2) {
+          const y =
+            wave.y +
+            Math.sin(x * wave.length + waveOffsetRef.current * wave.speed + wave.phaseOffset) * wave.amplitude;
+          ctx.lineTo(x, y);
+        }
 
-          for (let x = 0; x < canvas.width; x += 2) {
-            const y =
-              wave.y +
-              Math.sin(x * wave.length + waveOffsetRef.current * wave.speed + wave.phaseOffset) * wave.amplitude;
-            ctx.lineTo(x, y);
-          }
+        ctx.lineTo(canvas.width, canvas.height);
+        ctx.lineTo(0, canvas.height);
+        ctx.closePath();
 
-          ctx.lineTo(canvas.width, canvas.height);
-          ctx.lineTo(0, canvas.height);
-          ctx.closePath();
+        ctx.fillStyle = gradient;
+        ctx.fill();
 
-          ctx.fillStyle = gradient;
-          ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(0, wave.y);
 
-          ctx.beginPath();
-          ctx.moveTo(0, wave.y);
+        for (let x = 0; x < canvas.width; x += 2) {
+          const y =
+            wave.y +
+            Math.sin(x * wave.length + waveOffsetRef.current * wave.speed + wave.phaseOffset) * wave.amplitude;
+          ctx.lineTo(x, y);
+        }
 
-          for (let x = 0; x < canvas.width; x += 2) {
-            const y =
-              wave.y +
-              Math.sin(x * wave.length + waveOffsetRef.current * wave.speed + wave.phaseOffset) * wave.amplitude;
-            ctx.lineTo(x, y);
-          }
-
-          ctx.strokeStyle = `rgba(0, 113, 227, ${wave.opacity})`;
-          ctx.lineWidth = wave.lineWidth;
-          ctx.stroke();
-        });
-      }
+        ctx.strokeStyle = `rgba(0, 113, 227, ${wave.opacity})`;
+        ctx.lineWidth = wave.lineWidth;
+        ctx.stroke();
+      });
 
       prevScrollYRef.current = scrollYRef.current;
 
@@ -205,7 +186,7 @@ export const StarryBackground = () => {
       // Remove event listeners
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, [theme]);
+  }, []);
 
   useThrottledScroll(() => {
     prevScrollYRef.current = scrollYRef.current;
