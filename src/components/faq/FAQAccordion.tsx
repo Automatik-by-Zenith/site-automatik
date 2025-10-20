@@ -1,7 +1,6 @@
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useRouter, useSearchParams } from "next/navigation";
 
 interface FAQ {
   question: string;
@@ -11,38 +10,14 @@ interface FAQ {
 
 interface FAQAccordionProps {
   faqs: FAQ[];
-  category: string;
 }
 
-export function FAQAccordion({ faqs, category }: FAQAccordionProps) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const expandedFaq = searchParams.get("faqId");
-
-  const handleValueChange = (value: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-
-    if (value) {
-      params.set("faqId", value);
-    } else {
-      params.delete("faqId");
-    }
-
-    // Keep the category param
-    if (category) {
-      params.set("category", category);
-    }
-
-    router.push(`?${params.toString()}`, { scroll: false });
-  };
-
+export function FAQAccordion({ faqs }: FAQAccordionProps) {
   return (
     <Accordion
       type="single"
       collapsible
       className="w-full space-y-3"
-      value={expandedFaq || undefined}
-      onValueChange={handleValueChange}
     >
       {faqs.map((faq, index) => (
         <AccordionItem
