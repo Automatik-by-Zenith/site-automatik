@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 import { CaseStudyCard } from "./components/CaseStudyCard";
 import caseStudiesData from "@/data/caseStudies.json";
 import { GradientText } from "@/components/ui/GradientText";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const categories = [
   { id: "all", label: "Tous" },
@@ -20,11 +21,12 @@ const categories = [
   { id: "gestion", label: "Gestion" },
 ];
 
-export default function EtudesDeCas() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+function EtudesDeCasContent() {
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get("category") || "all";
 
-  const filteredCases = selectedCategory === "all" 
-    ? caseStudiesData 
+  const filteredCases = selectedCategory === "all"
+    ? caseStudiesData
     : caseStudiesData.filter(c => c.category === selectedCategory);
 
   return (
@@ -56,12 +58,14 @@ export default function EtudesDeCas() {
               <Button
                 key={cat.id}
                 variant={selectedCategory === cat.id ? "default" : "outline"}
-                onClick={() => setSelectedCategory(cat.id)}
                 className="rounded-full"
                 aria-pressed={selectedCategory === cat.id}
                 aria-label={`Filtrer par ${cat.label}`}
+                asChild
               >
-                {cat.label}
+                <Link href={cat.id === "all" ? "/etudes-de-cas" : `/etudes-de-cas?category=${cat.id}`}>
+                  {cat.label}
+                </Link>
               </Button>
             ))}
           </div>
@@ -119,5 +123,13 @@ export default function EtudesDeCas() {
       <Footer />
       <ScrollToTop />
     </div>
+  );
+}
+
+export default function EtudesDeCas() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex flex-col"><Navigation /><Footer /></div>}>
+      <EtudesDeCasContent />
+    </Suspense>
   );
 }

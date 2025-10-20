@@ -2,17 +2,18 @@
 
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { allFAQs, categories } from "@/data/faqs";
-import { useState } from "react";
+import { FAQAccordion } from "@/components/faq/FAQAccordion";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-
-const FAQ = () => {
-  const [selectedCategory, setSelectedCategory] = useState("services");
+const FAQContent = () => {
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get("category") || "services";
 
   // Filter FAQs based on selected category
   const filteredFAQs = allFAQs.filter(faq => faq.category === selectedCategory);
@@ -48,10 +49,12 @@ const FAQ = () => {
                   <Button
                     key={category.id}
                     variant={selectedCategory === category.id ? "default" : "outline"}
-                    onClick={() => setSelectedCategory(category.id)}
                     className="transition-all duration-300"
+                    asChild
                   >
-                    {category.label}
+                    <Link href={`?category=${category.id}`} scroll={false}>
+                      {category.label}
+                    </Link>
                   </Button>
                 ))}
               </div>
@@ -70,25 +73,7 @@ const FAQ = () => {
 
                 {/* Right Column - Questions */}
                 <div className="space-y-3">
-                  <Accordion type="single" collapsible className="w-full space-y-3">
-                    {filteredFAQs.map((faq, index) => (
-                      <AccordionItem 
-                        key={index} 
-                        value={`faq-${index}`}
-                        className="bg-card rounded-lg border border-border/50 px-4 py-1 hover:border-primary/30 transition-colors"
-                      >
-                        <AccordionTrigger className="text-left hover:no-underline py-3 group">
-                          <span className="flex items-start gap-4 text-base font-medium">
-                            <span className="text-foreground/60 shrink-0">{index + 1}.</span>
-                            <span className="group-hover:text-primary transition-colors">{faq.question}</span>
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed pl-8 pb-3">
-                          {faq.answer}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
+                  <FAQAccordion faqs={filteredFAQs} category={selectedCategory} />
                 </div>
               </div>
             </div>
@@ -121,6 +106,14 @@ const FAQ = () => {
       </main>
       <Footer />
     </div>
+  );
+};
+
+const FAQ = () => {
+  return (
+    <Suspense fallback={<div className="min-h-screen"><Navigation /><Footer /></div>}>
+      <FAQContent />
+    </Suspense>
   );
 };
 
