@@ -2,7 +2,6 @@
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { StarryBackground } from "@/components/layout/StarryBackground";
@@ -17,13 +16,11 @@ export function RootProviders({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <PullToRefresh />
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <ScrollToTopOnRouteChange />
-          <StarryBackground />
-          {children}
-        </TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <ScrollToTopOnRouteChange />
+        <StarryBackground />
+        {children}
       </ThemeProvider>
     </QueryClientProvider>
   );
