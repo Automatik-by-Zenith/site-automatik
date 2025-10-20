@@ -2,23 +2,19 @@
 
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/utilities/ThemeToggle";
 import { Logo } from "./Logo";
+import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useThrottledScroll(() => {
+    setIsScrolled(window.scrollY > 20);
+  }, 100);
 
   return (
     <nav className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-500 ${isScrolled ? 'bg-background/95 border-b border-border/50' : 'bg-transparent border-b border-transparent'}`}>

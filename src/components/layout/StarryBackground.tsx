@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
+import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 
 interface Star {
   x: number;
@@ -37,6 +38,7 @@ export const StarryBackground = () => {
   const scrollYRef = useRef(0);
   const prevScrollYRef = useRef(0);
   const animationTimeRef = useRef(0);
+  const animationFrameIdRef = useRef<number | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -113,11 +115,6 @@ export const StarryBackground = () => {
       wavesRef.current = waves;
     };
 
-    const handleScroll = () => {
-      prevScrollYRef.current = scrollYRef.current;
-      scrollYRef.current = window.scrollY;
-    };
-
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -192,19 +189,28 @@ export const StarryBackground = () => {
 
       prevScrollYRef.current = scrollYRef.current;
 
-      requestAnimationFrame(animate);
+      animationFrameIdRef.current = requestAnimationFrame(animate);
     };
 
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
-    window.addEventListener("scroll", handleScroll);
     animate();
 
     return () => {
+      // Cancel animation frame to prevent memory leak
+      if (animationFrameIdRef.current !== null) {
+        cancelAnimationFrame(animationFrameIdRef.current);
+      }
+
+      // Remove event listeners
       window.removeEventListener("resize", resizeCanvas);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, [theme]);
+
+  useThrottledScroll(() => {
+    prevScrollYRef.current = scrollYRef.current;
+    scrollYRef.current = window.scrollY;
+  }, 50);
 
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none" style={{ zIndex: -1 }} />;
 };

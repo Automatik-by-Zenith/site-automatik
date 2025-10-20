@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Home, Sparkles, BookOpen, Route, Trophy, FileText, Gift, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 
 const sections = [
   { id: "hero", label: "Accueil", icon: Home },
@@ -17,26 +18,25 @@ const sections = [
 export const SectionNavigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section.id);
-            break;
-          }
+    for (const section of sections) {
+      const element = document.getElementById(section.id);
+      if (element) {
+        const { offsetTop, offsetHeight } = element;
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          setActiveSection(section.id);
+          break;
         }
       }
-    };
+    }
+  };
 
-    window.addEventListener("scroll", handleScroll);
+  useThrottledScroll(handleScroll, 100);
+
+  useEffect(() => {
     handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {

@@ -34,34 +34,36 @@ export const FloatingLogos = () => {
 
   // Generate random connections
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout | null = null;
+
     const generateConnections = () => {
       // Start fade out
       setIsFadingOut(true);
       setLineProgress(1);
-      
-      setTimeout(() => {
+
+      timeoutId = setTimeout(() => {
         const newConnections: [number, number][] = [];
         const numConnections = Math.floor(Math.random() * 3) + 2; // 2-4 connections
-        
+
         for (let i = 0; i < numConnections; i++) {
           const from = Math.floor(Math.random() * logosData.length);
           let to = Math.floor(Math.random() * logosData.length);
-          
+
           // Ensure not connecting to itself
           while (to === from) {
             to = Math.floor(Math.random() * logosData.length);
           }
-          
+
           // Check if connection already exists
           const exists = newConnections.some(
             ([a, b]) => (a === from && b === to) || (a === to && b === from)
           );
-          
+
           if (!exists) {
             newConnections.push([from, to]);
           }
         }
-        
+
         setConnections(newConnections);
         setLineProgress(0);
         setIsFadingOut(false);
@@ -71,7 +73,12 @@ export const FloatingLogos = () => {
     generateConnections();
     const interval = setInterval(generateConnections, 4000); // Change every 4 seconds
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   // Animate line drawing
@@ -154,7 +161,7 @@ export const FloatingLogos = () => {
 
       ctx.strokeStyle = "hsl(var(--primary))";
       ctx.lineWidth = 2;
-      
+
       // Calculate opacity based on fade state
       const opacity = isFadingOut ? (1 - lineProgress) * 0.25 : lineProgress * 0.25;
       ctx.globalAlpha = opacity;
@@ -162,7 +169,7 @@ export const FloatingLogos = () => {
       connections.forEach(([fromIdx, toIdx]) => {
         const from = logos[fromIdx];
         const to = logos[toIdx];
-        
+
         const x1 = (from.x / 100) * canvas.width + from.offsetX;
         const y1 = (from.y / 100) * canvas.height + from.offsetY;
         const x2 = (to.x / 100) * canvas.width + to.offsetX;
@@ -180,12 +187,10 @@ export const FloatingLogos = () => {
     };
 
     updateCanvas();
-    const animationFrame = requestAnimationFrame(updateCanvas);
-    
+
     window.addEventListener("resize", updateCanvas);
     return () => {
       window.removeEventListener("resize", updateCanvas);
-      cancelAnimationFrame(animationFrame);
     };
   }, [logos, connections, lineProgress, isFadingOut]);
 

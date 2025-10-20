@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const WhyUs = () => {
   return (
     <section className="relative w-full h-full py-20">
@@ -24,9 +26,12 @@ export const WhyUs = () => {
         </div>
 
         <div className="max-w-4xl mx-auto w-full pb-4">
-          <img
+          <Image
             src="/assets/team-collaboration.png"
             alt="Équipe collaborant sur un processus d'automatisation"
+            width={1200}
+            height={800}
+            loading="lazy"
             className="w-full h-auto rounded-lg"
           />
         </div>
