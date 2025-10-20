@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { FloatingLogos } from "@/components/FloatingLogos";
+import { FloatingLogos } from "@/components/animations/FloatingLogos";
 
 export const Hero = () => {
   return (

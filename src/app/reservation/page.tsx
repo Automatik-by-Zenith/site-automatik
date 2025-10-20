@@ -1,7 +1,7 @@
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
-import { LeadMagnet } from "@/components/LeadMagnet";
-import { ScrollToTop } from "@/components/ScrollToTop";
+import { Navigation } from "@/components/layout/Navigation";
+import { Footer } from "@/components/layout/Footer";
+import { LeadMagnet } from "../components/LeadMagnet";
+import { ScrollToTop } from "@/components/utilities/ScrollToTop";
 
 const Reservation = () => {
   return (

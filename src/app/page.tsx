@@ -1,14 +1,14 @@
-import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
-import { WhyUs } from "@/components/WhyUs";
-import { UseCasesList } from "@/components/UseCasesList";
-import { ProcessSteps } from "@/components/ProcessSteps";
-import { Benefits } from "@/components/Benefits";
-import { FeaturedCaseStudies } from "@/components/FeaturedCaseStudies";
-import { FAQSection } from "@/components/FAQSection";
-import { Footer } from "@/components/Footer";
-import { ScrollToTop } from "@/components/ScrollToTop";
-import { SectionNavigation } from "@/components/SectionNavigation";
+import { Navigation } from "@/components/layout/Navigation";
+import { Hero } from "./components/Hero";
+import { WhyUs } from "./components/WhyUs";
+import { UseCasesList } from "./components/UseCasesList";
+import { ProcessSteps } from "./components/ProcessSteps";
+import { Benefits } from "./components/Benefits";
+import { FeaturedCaseStudies } from "./components/FeaturedCaseStudies";
+import { FAQSection } from "./components/FAQSection";
+import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/utilities/ScrollToTop";
+import { SectionNavigation } from "./components/SectionNavigation";
 
 const Index = () => {
   return (

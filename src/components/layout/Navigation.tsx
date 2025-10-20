@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/utilities/ThemeToggle";
+import { Logo } from "./Logo";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

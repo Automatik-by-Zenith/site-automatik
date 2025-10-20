@@ -4,10 +4,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { StarryBackground } from "@/components/StarryBackground";
-import { PullToRefresh } from "@/components/PullToRefresh";
-import { ScrollToTopOnRouteChange } from "@/components/ScrollToTopOnRouteChange";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { StarryBackground } from "@/components/layout/StarryBackground";
+import { PullToRefresh } from "@/components/utilities/PullToRefresh";
+import { ScrollToTopOnRouteChange } from "@/components/utilities/ScrollToTopOnRouteChange";
 import { ReactNode } from "react";
 
 const queryClient = new QueryClient();

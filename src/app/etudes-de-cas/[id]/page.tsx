@@ -1,5 +1,5 @@
 import caseStudiesData from "@/data/caseStudies.json";
-import { EtudeDeCasDetailClient } from "./EtudeDeCasDetailClient";
+import { EtudeDeCasDetailClient } from "./EtudeDeCasDetail";
 
 // Generate static params for static export
 export function generateStaticParams() {

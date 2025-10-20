@@ -1,14 +1,14 @@
 "use client";
 
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
-import { ScrollToTop } from "@/components/ScrollToTop";
+import { Navigation } from "@/components/layout/Navigation";
+import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/utilities/ScrollToTop";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { CaseStudyCard } from "./components/CaseStudyCard";
 import caseStudiesData from "@/data/caseStudies.json";
 
 const categories = [
