@@ -1,7 +1,3 @@
-"use client";
-
-import { useMemo } from "react";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -16,23 +12,15 @@ import { CaseStudy, CaseStudyHighlight } from "@/types/caseStudy";
 import { iconMap } from "@/config/icons";
 import { GradientText } from "@/components/ui/GradientText";
 
-export function EtudeDeCasDetailClient() {
-  const params = useParams();
-  const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
+interface EtudeDeCasDetailProps {
+  params: Promise<{ id: string }>;
+}
 
-  // Memoize case study lookup to avoid repeated searches
-  const etude = useMemo(() => {
-    return (caseStudiesData as CaseStudy[]).find(cas => cas.id === id);
-  }, [id]);
+export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
+  const { id } = await params;
 
-  // Memoize highlights with icon transformations
-  const highlightsWithIcons = useMemo(() => {
-    if (!etude) return [];
-    return etude.highlights.map((highlight: CaseStudyHighlight) => ({
-      ...highlight,
-      Icon: iconMap[highlight.icon] || Clock
-    }));
-  }, [etude]);
+  // Find case study from static data
+  const etude = (caseStudiesData as CaseStudy[]).find(cas => cas.id === id);
 
   if (!etude) {
     return (
@@ -52,6 +40,12 @@ export function EtudeDeCasDetailClient() {
       </div>
     );
   }
+
+  // Transform highlights with icons
+  const highlightsWithIcons = etude.highlights.map((highlight: CaseStudyHighlight) => ({
+    ...highlight,
+    Icon: iconMap[highlight.icon] || Clock
+  }));
 
   return (
     <div className="min-h-screen flex flex-col">
