@@ -23,7 +23,8 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export default function EtudeDeCasDetail() {
-  const { id } = useParams();
+  const params = useParams();
+  const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
   const etude = caseStudiesData.find(cas => cas.id === id);
 
   if (!etude) {

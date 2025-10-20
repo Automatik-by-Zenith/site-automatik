@@ -396,6 +396,97 @@ All colors MUST be HSL.
   .border-background {
     border-color: hsl(var(--background));
   }
+
+  /* Opacity variants for card colors (used for transparency) */
+  .bg-card\/10 {
+    background-color: hsl(var(--card) / 0.1);
+  }
+  .bg-card\/20 {
+    background-color: hsl(var(--card) / 0.2);
+  }
+  .bg-card\/30 {
+    background-color: hsl(var(--card) / 0.3);
+  }
+  .bg-card\/40 {
+    background-color: hsl(var(--card) / 0.4);
+  }
+  .bg-card\/50 {
+    background-color: hsl(var(--card) / 0.5);
+  }
+  .bg-card\/60 {
+    background-color: hsl(var(--card) / 0.6);
+  }
+  .bg-card\/70 {
+    background-color: hsl(var(--card) / 0.7);
+  }
+  .bg-card\/80 {
+    background-color: hsl(var(--card) / 0.8);
+  }
+  .bg-card\/90 {
+    background-color: hsl(var(--card) / 0.9);
+  }
+
+  /* Opacity variants for border colors */
+  .border-border\/10 {
+    border-color: hsl(var(--border) / 0.1);
+  }
+  .border-border\/20 {
+    border-color: hsl(var(--border) / 0.2);
+  }
+  .border-border\/30 {
+    border-color: hsl(var(--border) / 0.3);
+  }
+  .border-border\/40 {
+    border-color: hsl(var(--border) / 0.4);
+  }
+  .border-border\/50 {
+    border-color: hsl(var(--border) / 0.5);
+  }
+  .border-border\/60 {
+    border-color: hsl(var(--border) / 0.6);
+  }
+
+  /* Opacity variants for primary colors */
+  .border-primary\/10 {
+    border-color: hsl(var(--primary) / 0.1);
+  }
+  .border-primary\/20 {
+    border-color: hsl(var(--primary) / 0.2);
+  }
+  .border-primary\/30 {
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  .border-primary\/40 {
+    border-color: hsl(var(--primary) / 0.4);
+  }
+  .border-primary\/50 {
+    border-color: hsl(var(--primary) / 0.5);
+  }
+
+  .text-primary\/10 {
+    color: hsl(var(--primary) / 0.1);
+  }
+  .text-primary\/20 {
+    color: hsl(var(--primary) / 0.2);
+  }
+
+  .bg-primary\/10 {
+    background-color: hsl(var(--primary) / 0.1);
+  }
+  .bg-primary\/20 {
+    background-color: hsl(var(--primary) / 0.2);
+  }
+
+  /* Hover states with opacity for the most commonly used */
+  .hover\:border-primary\/30:hover {
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  .hover\:border-primary\/40:hover {
+    border-color: hsl(var(--primary) / 0.4);
+  }
+  .hover\:text-primary:hover {
+    color: hsl(var(--primary));
+  }
 }
 
 @layer components {
