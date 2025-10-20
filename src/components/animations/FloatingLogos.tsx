@@ -94,17 +94,24 @@ export const FloatingLogos = () => {
     }
   }, [lineProgress, isFadingOut]);
 
-  // Mouse tracking
+  // Mouse tracking with throttling
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
+    let lastExecuted = 0;
+    const THROTTLE_DELAY = 50; // ms
+
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      setMousePos({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
+      const now = Date.now();
+      if (now - lastExecuted >= THROTTLE_DELAY) {
+        const rect = container.getBoundingClientRect();
+        setMousePos({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+        lastExecuted = now;
+      }
     };
 
     container.addEventListener("mousemove", handleMouseMove);

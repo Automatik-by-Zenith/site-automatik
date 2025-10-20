@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Navigation } from "@/components/layout/Navigation";
@@ -18,7 +19,20 @@ import { GradientText } from "@/components/ui/GradientText";
 export function EtudeDeCasDetailClient() {
   const params = useParams();
   const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
-  const etude = (caseStudiesData as CaseStudy[]).find(cas => cas.id === id);
+
+  // Memoize case study lookup to avoid repeated searches
+  const etude = useMemo(() => {
+    return (caseStudiesData as CaseStudy[]).find(cas => cas.id === id);
+  }, [id]);
+
+  // Memoize highlights with icon transformations
+  const highlightsWithIcons = useMemo(() => {
+    if (!etude) return [];
+    return etude.highlights.map((highlight: CaseStudyHighlight) => ({
+      ...highlight,
+      Icon: iconMap[highlight.icon] || Clock
+    }));
+  }, [etude]);
 
   if (!etude) {
     return (
@@ -66,8 +80,8 @@ export function EtudeDeCasDetailClient() {
       <section className="pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-            {etude.highlights.map((highlight: CaseStudyHighlight, idx: number) => {
-              const Icon = iconMap[highlight.icon] || Clock;
+            {highlightsWithIcons.map((highlight, idx: number) => {
+              const Icon = highlight.Icon;
               return (
                 <Card key={idx} variant="glass">
                   <CardContent className="p-6 text-center space-y-2">

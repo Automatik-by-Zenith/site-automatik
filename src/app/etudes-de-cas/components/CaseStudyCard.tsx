@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,7 @@ interface CaseStudyCardProps {
   metrics: Metric[];
 }
 
-const getToolPosition = (index: number, total: number) => {
+const getToolPosition = (index: number) => {
   const positions = [
     { top: "-5%", left: "-5%", rotate: "-15deg" },
     { top: "-5%", right: "-5%", rotate: "20deg" },
@@ -46,7 +47,10 @@ const shuffleTools = (tools: string[], cardId: string) => {
   return shuffled;
 };
 
-export const CaseStudyCard = ({ id, title, summary, client, tools, metrics }: CaseStudyCardProps) => {
+export const CaseStudyCard = React.memo(({ id, title, summary, client, tools, metrics }: CaseStudyCardProps) => {
+  // Memoize shuffled tools to avoid recalculating on every render
+  const shuffledTools = useMemo(() => shuffleTools(tools, id), [tools, id]);
+
   return (
     <Card
       variant="glass"
@@ -54,8 +58,8 @@ export const CaseStudyCard = ({ id, title, summary, client, tools, metrics }: Ca
     >
       {/* Tools logos background */}
       <div className="absolute inset-0 pointer-events-none">
-        {shuffleTools(tools, id).map((tool, index) => {
-          const position = getToolPosition(index, tools.length);
+        {shuffledTools.map((tool, index) => {
+          const position = getToolPosition(index);
           return (
             <div
               key={tool}
@@ -103,4 +107,6 @@ export const CaseStudyCard = ({ id, title, summary, client, tools, metrics }: Ca
       </CardContent>
     </Card>
   );
-};
+});
+
+CaseStudyCard.displayName = "CaseStudyCard";
