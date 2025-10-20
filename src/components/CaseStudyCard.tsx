@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, TrendingUp, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
 import openaiLogo from "@/assets/logos/openai.svg";
 import n8nLogo from "@/assets/logos/n8n.png";
 import googleLogo from "@/assets/logos/google.png";
@@ -31,7 +32,7 @@ const iconMap = {
   CheckCircle,
 };
 
-const toolLogos: Record<string, string> = {
+const toolLogos: Record<string, string | StaticImageData> = {
   openai: openaiLogo,
   n8n: n8nLogo,
   google: googleLogo,
@@ -94,7 +95,15 @@ export const CaseStudyCard = ({ id, title, summary, client, tools, metrics }: Ca
               }}
               title={toolNames[tool]}
             >
-              <img src={toolLogos[tool]} alt={toolNames[tool]} className="w-full h-full object-contain" />
+              {typeof toolLogos[tool] === 'string' ? (
+                <img src={toolLogos[tool]} alt={toolNames[tool]} className="w-full h-full object-contain" />
+              ) : (
+                <Image
+                  src={toolLogos[tool] as StaticImageData}
+                  alt={toolNames[tool]}
+                  className="w-full h-full object-contain"
+                />
+              )}
             </div>
           );
         })}

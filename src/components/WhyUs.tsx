@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Key, ArrowRight } from "lucide-react";
+"use client";
+
+import Image from "next/image";
 import teamImage from "@/assets/team-collaboration.png";
 
 export const WhyUs = () => {
@@ -28,11 +28,11 @@ export const WhyUs = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto w-full pb-4">
-          <img 
-            src={teamImage} 
-            alt="Équipe collaborant sur un processus d'automatisation" 
+          <Image
+            src={teamImage}
+            alt="Équipe collaborant sur un processus d'automatisation"
             className="w-full h-auto rounded-lg"
           />
         </div>
