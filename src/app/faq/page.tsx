@@ -72,7 +72,7 @@ const FAQContent = () => {
                 </div>
 
                 {/* Right Column - Questions */}
-                <div className="space-y-3">
+                <div className="space-y-3 overflow-hidden">
                   <FAQAccordion faqs={filteredFAQs} category={selectedCategory} />
                 </div>
               </div>

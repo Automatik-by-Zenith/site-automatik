@@ -34,7 +34,7 @@ const Index = () => {
           <FeaturedCaseStudies />
         </section>
         <section id="faq" data-section-id="faq" className="relative snap-start snap-always min-h-[100svh] flex flex-col justify-start w-full">
-          <div className="flex-1 flex items-center justify-center">
+          <div className="flex-1 flex items-center justify-center w-full">
             <FAQSection />
           </div>
           <Footer />
