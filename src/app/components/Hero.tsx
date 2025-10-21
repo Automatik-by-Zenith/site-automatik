@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { FloatingLogos } from "@/components/animations/FloatingLogos";
 import { GradientText } from "@/components/ui/GradientText";
 
 export const Hero = () => {
   return (
     <section className="relative w-full h-full flex items-center justify-center">
-      <FloatingLogos />
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-h-full py-8 pt-20 md:pt-0">
         <div className="max-w-4xl mx-auto text-center space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           {/* Main heading */}
