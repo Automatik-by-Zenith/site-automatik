@@ -29,7 +29,7 @@ export const ProcessSteps = () => {
               }
             >
               <p className="text-base text-muted-foreground leading-relaxed mb-4">{step.description}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-3">{step.highlight}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed italic">{step.highlight}</p>
             </IconCard>
           ))}
         </div>
