@@ -1,0 +1,21 @@
+{
+  "phone": "+33 1 23 45 67 89",
+  "phoneHref": "+33123456789",
+  "email": "contact@example.com",
+  "address": "21 rue des Geais, 03000 Moulins",
+  "legalName": "ZenithSAS",
+  "legalForm": "Société par Actions Simplifiée (SAS)",
+  "capital": "1000",
+  "siren": "937 851 319",
+  "siret": "937 851 319 00015",
+  "rcsCity": "Cusset",
+  "rcsNumber": "937 851 319",
+  "tvaNumber": "FR02937851319",
+  "legalRepresentative": "Arthur Rebouffat",
+  "hoster": {
+    "name": "Vercel Inc.",
+    "address": "340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis",
+    "website": "https://vercel.com",
+    "contact": "https://vercel.com/contact"
+  }
+}

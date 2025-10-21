@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
+import companyInfo from "@/data/companyInfo.json";
 
 export const Footer = () => {
   return (
@@ -48,20 +49,30 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4" aria-hidden="true" />
-                <a href="tel:+33123456789" className="hover:text-primary transition-colors">
-                  +33 1 23 45 67 89
+                <a href={`tel:${companyInfo.phoneHref}`} className="hover:text-primary transition-colors">
+                  {companyInfo.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-1" aria-hidden="true" />
-                <span>Paris, France</span>
+                <span>100% Remote</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border/40 mt-12 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Automatik by Zenith. Tous droits réservés.</p>
+        <div className="border-t border-border/40 mt-12 pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground mb-4">
+            <p>© {new Date().getFullYear()} Automatik by Zenith. Tous droits réservés.</p>
+            <div className="flex gap-6">
+              <a href="/mentions-legales" className="hover:text-primary transition-colors">
+                Mentions légales
+              </a>
+              <a href="/politique-confidentialite" className="hover:text-primary transition-colors">
+                Politique de confidentialité
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
