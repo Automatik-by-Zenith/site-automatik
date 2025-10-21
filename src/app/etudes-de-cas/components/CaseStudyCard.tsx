@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +23,8 @@ interface CaseStudyCardProps {
   metrics: Metric[];
 }
 
+// Positions simples pour les logos, cyclées en fonction de l'ordre des outils
+// L'ordre dans le tableau outils détermine la position
 const getToolPosition = (index: number) => {
   const positions = [
     { top: "-5%", left: "-5%", rotate: "-15deg" },
@@ -35,23 +37,7 @@ const getToolPosition = (index: number) => {
   return positions[index % positions.length];
 };
 
-const shuffleTools = (tools: string[], cardId: string) => {
-  // Create a consistent hash from cardId
-  const hash = cardId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  
-  // Create a copy and shuffle based on hash
-  const shuffled = [...tools];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = (hash * (i + 1)) % (i + 1);
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
-
 export const CaseStudyCard = React.memo(({ id, title, summary, client, tools, metrics }: CaseStudyCardProps) => {
-  // Memoize shuffled tools to avoid recalculating on every render
-  const shuffledTools = useMemo(() => shuffleTools(tools, id), [tools, id]);
-
   return (
     <Card
       variant="glass"
@@ -59,7 +45,7 @@ export const CaseStudyCard = React.memo(({ id, title, summary, client, tools, me
     >
       {/* Tools logos background */}
       <div className="absolute inset-0 pointer-events-none">
-        {shuffledTools.map((tool, index) => {
+        {tools.map((tool: string, index: number) => {
           const position = getToolPosition(index);
           return (
             <div

@@ -29,12 +29,13 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold">Étude de cas non trouvée</h1>
-            <Button asChild>
-              <Link href="/etudes-de-cas">
-                <ArrowLeft className="mr-2 w-4 h-4" aria-hidden="true" />
-                Retour aux études de cas
-              </Link>
-            </Button>
+            <Link
+              href="/etudes-de-cas"
+              className="inline-flex items-center text-foreground hover:text-primary transition-colors duration-300"
+            >
+              <ArrowLeft className="mr-2 w-4 h-4" aria-hidden="true" />
+              Retour aux études de cas
+            </Link>
           </div>
         </div>
       </div>
@@ -55,14 +56,17 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
       <section className="pt-32 pb-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <Button variant="ghost" asChild className="mb-6">
-              <Link href="/etudes-de-cas">
+            <div className="flex items-center gap-4 mb-6">
+              <Link
+                href="/etudes-de-cas"
+                className="inline-flex items-center text-foreground hover:text-primary transition-colors duration-300"
+              >
                 <ArrowLeft className="mr-2 w-4 h-4" aria-hidden="true" />
                 Retour aux études de cas
               </Link>
-            </Button>
 
-            <Badge className="mb-4">{etude.sector}</Badge>
+              <Badge>{etude.sector}</Badge>
+            </div>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">{etude.title}</h1>
             <p className="text-xl text-muted-foreground mb-8">{etude.subtitle}</p>
             <p className="text-sm text-muted-foreground">Client : {etude.client}</p>

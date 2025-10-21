@@ -7,7 +7,11 @@
     "category": "hotellerie",
     "client": "Hôtel multi-sites",
     "sector": "Hôtellerie",
-    "tools": ["openai", "n8n", "google"],
+    "tools": [
+      "openai",
+      "google",
+      "n8n"
+    ],
     "metrics": [
       { "label": "Taux de réponse", "value": "95%", "icon": "TrendingUp" },
       { "label": "Temps gagné/sem", "value": "12h", "icon": "Clock" },
@@ -51,7 +55,7 @@
     "category": "hotellerie",
     "client": "Établissement hôtelier",
     "sector": "Hôtellerie",
-    "tools": ["openai", "n8n", "messenger"],
+    "tools": ["messenger", "openai", "n8n"],
     "metrics": [
       { "label": "Première réponse", "value": "3s", "icon": "Clock" },
       { "label": "Leads récupérés", "value": "78%", "icon": "TrendingUp" },
@@ -94,7 +98,7 @@
     "category": "commercial",
     "client": "Entreprise de services",
     "sector": "Commercial",
-    "tools": ["openai", "n8n", "gmail"],
+    "tools": ["n8n", "gmail", "openai"],
     "metrics": [
       { "label": "Temps par devis", "value": "1:30", "icon": "Clock" },
       { "label": "Conversion", "value": "+35%", "icon": "TrendingUp" },
@@ -139,7 +143,7 @@
     "category": "support",
     "client": "PME multi-secteurs",
     "sector": "Support client",
-    "tools": ["openai", "n8n", "gmail"],
+    "tools": ["gmail", "n8n", "openai"],
     "metrics": [
       { "label": "Backlog réduit", "value": "-80%", "icon": "TrendingUp" },
       { "label": "Temps/mail", "value": "-60%", "icon": "Clock" },
