@@ -28,7 +28,7 @@ export const WhyUs = () => {
 
         <div className="max-w-4xl mx-auto w-full pb-4">
           <Image
-            src="/assets/team-collaboration.png"
+            src="/assets/team-collaboration.webp"
             alt="Équipe collaborant sur un processus d'automatisation"
             width={1200}
             height={800}
