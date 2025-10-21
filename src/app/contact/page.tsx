@@ -35,8 +35,7 @@ const Contact = () => {
     formState: {
       errors
     },
-    setValue,
-    watch
+    setValue
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema)
   });

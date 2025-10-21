@@ -10,8 +10,6 @@ export const metadata = {
 };
 
 export default function PolitiqueConfidentialite() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <>
       <Navigation />

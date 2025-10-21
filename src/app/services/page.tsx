@@ -1,8 +1,7 @@
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Workflow, Code, ArrowRight, Calendar, CheckCircle2, Target } from "lucide-react";
 import Link from "next/link";
 import { ServiceIcon } from "@/components/ui/service-icon";
