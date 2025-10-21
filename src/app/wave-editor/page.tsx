@@ -14,14 +14,7 @@ export default function WaveEditorPage() {
   });
   const timeRef = useRef(0);
 
-  // Vérifier si on est en production
-  const isProduction =
-    typeof window !== "undefined" &&
-    process.env.NODE_ENV === "production" &&
-    process.env.NEXT_PUBLIC_ENVIRONMENT === "production";
-
   useEffect(() => {
-    if (isProduction) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -62,20 +55,11 @@ export default function WaveEditorPage() {
     animate();
 
     return () => cancelAnimationFrame(animationId);
-  }, [params, isProduction]);
+  }, [params]);
 
   const handleParamChange = (key: keyof WaveParams, value: number) => {
     setParams((prev) => ({ ...prev, [key]: value }));
   };
-
-  // Afficher un message si on est en production
-  if (isProduction) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-gray-50">
-        <p className="text-gray-600 text-lg">Cette page n&apos;est pas disponible en production.</p>
-      </div>
-    );
-  }
 
   return (
     <div className="relative w-full h-screen bg-gradient-to-b from-white/95 to-gray-100">
