@@ -3,9 +3,9 @@ import { GradientText } from "@/components/ui/GradientText";
 
 export const WhyUs = () => {
   return (
-    <section className="relative w-full h-full py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-between">
-        <div className="flex-1 flex items-center justify-center">
+    <section className="relative w-full h-full">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col py-20 justify-between">
+        <div className="flex-1 flex items-center justify-center w-full">
           <div className="text-center max-w-4xl mx-auto space-y-6">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Pourquoi{" "}

@@ -4,8 +4,8 @@ import { GradientText } from "@/components/ui/GradientText";
 
 export const Hero = () => {
   return (
-    <section className="relative w-full h-full flex items-center justify-center">
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-h-full py-8 pt-20 md:pt-0">
+    <section className="relative w-full h-full">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-h-full py-8 pt-20 md:pt-0 flex items-center justify-center h-full md:h-auto">
         <div className="max-w-4xl mx-auto text-center space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           {/* Main heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
