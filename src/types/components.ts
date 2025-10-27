@@ -39,3 +39,39 @@ export interface UseCase {
   /** Description du cas d'usage */
   description: string;
 }
+
+/**
+ * Représente une tâche dans le simulateur de gain de temps
+ */
+export interface TimeSavingTask {
+  /** Identifiant unique de la tâche */
+  id: string;
+  /** Icône Lucide représentant la tâche */
+  icon: LucideIcon;
+  /** Titre de la tâche */
+  title: string;
+  /** Description de la tâche */
+  description: string;
+  /** Temps moyen en minutes pour accomplir la tâche */
+  estimatedTime: number;
+  /** Nombre moyen de fois par jour/semaine */
+  frequency: number;
+}
+
+/**
+ * Résultat du calcul du simulateur
+ */
+export interface SimulatorResults {
+  /** Total des minutes perdues par jour */
+  totalMinutesPerDay: number;
+  /** Total des heures perdues par semaine */
+  totalHoursPerWeek: number;
+  /** Total des jours perdus par an */
+  totalDaysPerYear: number;
+  /** Coût total par jour */
+  costPerDay: number;
+  /** Coût total par mois */
+  costPerMonth: number;
+  /** Coût total par an */
+  costPerYear: number;
+}
