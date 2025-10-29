@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { CaseStudyCard } from "./components/CaseStudyCard";
-import caseStudiesData from "@/data/caseStudies.json";
+import { caseStudies } from "@/data/caseStudies/index";
 import { GradientText } from "@/components/ui/GradientText";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -26,8 +26,8 @@ function EtudesDeCasContent() {
   const selectedCategory = searchParams.get("category") || "all";
 
   const filteredCases = selectedCategory === "all"
-    ? caseStudiesData
-    : caseStudiesData.filter(c => c.category === selectedCategory);
+    ? caseStudies
+    : caseStudies.filter(c => c.category === selectedCategory);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -76,17 +76,25 @@ function EtudesDeCasContent() {
       <section className="pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredCases.map((cas) => (
-              <CaseStudyCard
-                key={cas.id}
-                id={cas.id}
-                title={cas.title}
-                summary={cas.summary}
-                client={cas.client}
-                tools={cas.tools}
-                metrics={cas.metrics}
-              />
-            ))}
+            {filteredCases.map((cas) => {
+              // Convert highlights to metrics format for card display
+              const metrics = cas.highlights.map(h => ({
+                label: h.label,
+                value: h.value,
+                icon: h.icon
+              }));
+              return (
+                <CaseStudyCard
+                  key={cas.id}
+                  id={cas.id}
+                  title={cas.title}
+                  summary={cas.summary}
+                  client={cas.client}
+                  tools={cas.tools}
+                  metrics={metrics}
+                />
+              );
+            })}
           </div>
         </div>
       </section>

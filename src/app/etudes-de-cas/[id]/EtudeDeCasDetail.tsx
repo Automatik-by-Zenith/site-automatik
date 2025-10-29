@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ContentSection } from "@/components/ui/ContentSection";
 import { ArrowLeft, ArrowRight, Clock, TrendingUp } from "lucide-react";
-import caseStudiesData from "@/data/caseStudies.json";
+import { caseStudies } from "@/data/caseStudies/index";
 import { CaseStudy, CaseStudyHighlight } from "@/types/caseStudy";
 import { iconMap } from "@/config/icons";
 import { GradientText } from "@/components/ui/GradientText";
@@ -20,7 +20,7 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
   const { id } = await params;
 
   // Find case study from static data
-  const etude = (caseStudiesData as CaseStudy[]).find(cas => cas.id === id);
+  const etude = caseStudies.find(cas => cas.id === id);
 
   if (!etude) {
     return (
@@ -66,9 +66,10 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
               </Link>
 
               <Badge>{etude.sector}</Badge>
+              <Badge variant="outline">{etude.timeline}</Badge>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">{etude.title}</h1>
-            <p className="text-xl text-muted-foreground mb-8">{etude.subtitle}</p>
+            <p className="text-xl text-muted-foreground mb-8">{etude.summary}</p>
             <p className="text-sm text-muted-foreground">Client : {etude.client}</p>
           </div>
         </div>
@@ -101,25 +102,51 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
         variant="default"
       />
 
-      {/* Problem */}
+      {/* Trigger (optionnel) */}
+      {etude.trigger && (
+        <ContentSection
+          title="Le moment déclic"
+          content={etude.trigger}
+          variant="bg-card"
+        />
+      )}
+
+      {/* Challenges */}
       <ContentSection
-        title="Problème"
-        items={etude.problem}
-        iconElement="•"
+        title="Les défis"
+        items={etude.challenges}
+        iconElement="❌"
         variant="bg-card"
       />
 
-      {/* Solution */}
-      <ContentSection
-        title="Solution"
-        items={etude.solution}
-        iconElement="✓"
-        variant="default"
-        footer={{
-          title: "Architecture & stack",
-          content: etude.stack
-        }}
-      />
+      {/* How it works */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Comment ça marche</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {etude.howItWorks.map((step, idx) => (
+                <Card key={idx} variant="glass">
+                  <CardContent className="p-6 space-y-3">
+                    <div className="flex items-start gap-3">
+                      <span className="text-3xl">{step.emoji}</span>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">
+                            Étape {step.step}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-semibold">{step.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Results */}
       <ContentSection
@@ -129,10 +156,84 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
         variant="bg-card"
       />
 
-      {/* Next Steps */}
+      {/* Impact */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Card variant="glass" className="p-8 md:p-12">
+              <div className="space-y-4">
+                <h2 className="text-2xl sm:text-3xl font-bold">L'impact global</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {etude.impact}
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Card variant="glass" className="p-8 md:p-12 border-l-4 border-primary">
+              <div className="space-y-4">
+                <p className="text-lg italic text-foreground">
+                  "{etude.testimonial.quote}"
+                </p>
+                <p className="text-sm font-semibold text-muted-foreground">
+                  — {etude.testimonial.author}
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Ideal For */}
       <ContentSection
-        title="Prochaines étapes"
-        items={etude.nextSteps}
+        title="Pour qui ?"
+        items={etude.idealFor}
+        iconElement="✓"
+        variant="default"
+      />
+
+      {/* Deployment */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8">Déploiement & formation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card variant="glass">
+                <CardContent className="p-6 space-y-3">
+                  <Clock className="w-8 h-8 text-primary" aria-hidden="true" />
+                  <h3 className="font-semibold">Durée</h3>
+                  <p className="text-sm text-muted-foreground">{etude.deployment.duration}</p>
+                </CardContent>
+              </Card>
+              <Card variant="glass">
+                <CardContent className="p-6 space-y-3">
+                  <span className="text-3xl">👥</span>
+                  <h3 className="font-semibold">Formation</h3>
+                  <p className="text-sm text-muted-foreground">{etude.deployment.training}</p>
+                </CardContent>
+              </Card>
+              <Card variant="glass">
+                <CardContent className="p-6 space-y-3">
+                  <span className="text-3xl">✅</span>
+                  <h3 className="font-semibold">Validation</h3>
+                  <p className="text-sm text-muted-foreground">{etude.deployment.validation}</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Opportunities */}
+      <ContentSection
+        title="Et après ? Les opportunités"
+        items={etude.opportunities}
         icon={ArrowRight}
         variant="bg-card"
       />

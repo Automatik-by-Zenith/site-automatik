@@ -2,10 +2,10 @@ import { CaseStudyCard } from "../etudes-de-cas/components/CaseStudyCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import caseStudiesData from "@/data/caseStudies.json";
+import { caseStudies } from "@/data/caseStudies/index";
 export const FeaturedCaseStudies = () => {
   // Display first 3 case studies
-  const featuredCases = caseStudiesData.slice(0, 3);
+  const featuredCases = caseStudies.slice(0, 3);
   return <section className="py-24 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -19,7 +19,15 @@ export const FeaturedCaseStudies = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {featuredCases.map(cas => <CaseStudyCard key={cas.id} id={cas.id} title={cas.title} summary={cas.summary} client={cas.client} tools={cas.tools} metrics={cas.metrics} />)}
+          {featuredCases.map(cas => {
+            // Convert highlights to metrics format for card display
+            const metrics = cas.highlights.map(h => ({
+              label: h.label,
+              value: h.value,
+              icon: h.icon
+            }));
+            return <CaseStudyCard key={cas.id} id={cas.id} title={cas.title} summary={cas.summary} client={cas.client} tools={cas.tools} metrics={metrics} />;
+          })}
         </div>
 
         <div className="text-center">

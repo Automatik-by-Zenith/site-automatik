@@ -1,9 +1,9 @@
-import caseStudiesData from "@/data/caseStudies.json";
+import { caseStudies } from "@/data/caseStudies/index";
 import { EtudeDeCasDetail } from "./EtudeDeCasDetail";
 
 // Generate static params for all case studies
 export function generateStaticParams() {
-  return caseStudiesData.map((study) => ({
+  return caseStudies.map((study) => ({
     id: study.id,
   }));
 }
