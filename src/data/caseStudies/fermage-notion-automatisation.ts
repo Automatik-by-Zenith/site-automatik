@@ -29,9 +29,9 @@ export const fermageNotionAutomatisation: CaseStudy = {
   context: "Propriétaire foncier avec 45 baux répartis sur plusieurs parcelles, fermiers, avenants. Paiements mensuels ou trimestriels, parfois partiels ou en retard. Historique éparpillé : factures papier, tableurs Excel, emails perdus.",
   trigger: "Après avoir passé 8h à reconstituer les paiements pour la déclaration fiscale, sans être certain que tout était exact, générant stress et risque d'erreur.",
   challenges: [
-    "❌ Information éparpillée : papier, Excel, emails, notes diverses = impossible de retrouver l'historique complet",
-    "❌ Historique flou : quelle année exactement payée ? quelles parcelles ? quels avenants appliqués ?",
-    "❌ Clôture fiscale pénible : 8h de tri/vérification/reconstitution des paiements par fermier/année",
+    "Information éparpillée : papier, Excel, emails, notes diverses = impossible de retrouver l'historique complet",
+    "Historique flou : quelle année exactement payée ? quelles parcelles ? quels avenants appliqués ?",
+    "Clôture fiscale pénible : 8h de tri/vérification/reconstitution des paiements par fermier/année",
   ],
   howItWorks: [
     {

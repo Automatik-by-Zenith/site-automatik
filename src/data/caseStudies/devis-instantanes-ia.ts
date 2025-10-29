@@ -29,9 +29,9 @@ export const devisInstantenesIA: CaseStudy = {
   context: "Entreprise de services recevant 15-20 demandes/jour via email. Chaque devis nécessite d'extraire infos (nombre de personnes, options, allergies), appliquer règles tarifaires complexes, formater un PDF pro, puis valider.",
   trigger: "Après avoir perdu un contrat de 12K€ parce que le devis est parti 3h trop tard (concurrence arrivée d'abord), et que le client a changé d'avis.",
   challenges: [
-    "❌ Traitement lent (45 min/devis) : les demandes après 14h n'ont pas de réponse le jour même",
-    "❌ Au-delà de 2h, les chances de signature chutent de 60% (comparaison avec concurrence)",
-    "❌ Variabilité du chiffrage et PDFs mal formatés = perte de crédibilité et allers-retours",
+    "Traitement lent (45 min/devis) : les demandes après 14h n'ont pas de réponse le jour même",
+    "Au-delà de 2h, les chances de signature chutent de 60% (comparaison avec concurrence)",
+    "Variabilité du chiffrage et PDFs mal formatés = perte de crédibilité et allers-retours",
   ],
   howItWorks: [
     {

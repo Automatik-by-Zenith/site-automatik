@@ -29,9 +29,9 @@ export const hotelAvisGoogleIA: CaseStudy = {
   context: "Hôtel multi-sites qui reçoit 30-40 avis par semaine. Chaque avis non répondu en moins de 2h a 40% de chances d'être amplifié par d'autres commentaires négatifs. L'équipe de réception noyée sous les demandes de rédaction ne pouvait pas suivre.",
   trigger: "Le jour où un avis négatif est resté sans réponse pendant 48h et a généré 3 autres commentaires négatifs en cascade, impactant la note moyenne de 0.3 points.",
   challenges: [
-    "❌ L'équipe perd 20h/semaine à rédiger des avis avec des tons incohérents",
-    "❌ Au-delà de 2h, les réponses tardives font partir les clients ailleurs et amplifient les avis négatifs",
-    "❌ Maintenir un ton de marque cohérent sur plusieurs sites et types de clients (familles, voyageurs affaires)",
+    "L'équipe perd 20h/semaine à rédiger des avis avec des tons incohérents",
+    "Au-delà de 2h, les réponses tardives font partir les clients ailleurs et amplifient les avis négatifs",
+    "Maintenir un ton de marque cohérent sur plusieurs sites et types de clients (familles, voyageurs affaires)",
   ],
   howItWorks: [
     {

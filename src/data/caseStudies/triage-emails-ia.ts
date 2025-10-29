@@ -29,9 +29,9 @@ export const triageEmailsIA: CaseStudy = {
   context: "PME dont l'inbox accumule 100-150 emails/jour (prospection, fournisseurs, support, RH). Sans tri, impossible de distinguer urgent de peut-attendre. Les mails importants se perdent, la réactivité s'effondre.",
   trigger: "Quand l'inbox atteint 1200 emails non traités et que le responsable ne sait même pas s'il manque des commandes fournisseur ou des demandes clients.",
   challenges: [
-    "❌ Perte d'emails importants noyés dans la masse (support client, commandes)",
-    "❌ Fatigue décisionnelle : trier manuellement chaque email tue la productivité",
-    "❌ Manque de traçabilité : impossible de savoir quel email a reçu une réponse",
+    "Perte d'emails importants noyés dans la masse (support client, commandes)",
+    "Fatigue décisionnelle : trier manuellement chaque email tue la productivité",
+    "Manque de traçabilité : impossible de savoir quel email a reçu une réponse",
   ],
   howItWorks: [
     {

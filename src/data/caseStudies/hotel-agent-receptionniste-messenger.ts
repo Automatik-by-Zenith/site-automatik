@@ -29,9 +29,9 @@ export const hotelAgentReceptionniste: CaseStudy = {
   context: "Le Messenger de l'hôtel saturait l'équipe de réception avec des questions récurrentes pendant les pics : disponibilités, tarifs, conditions d'annulation. Les vraies urgences se perdaient dans la masse.",
   trigger: "Le jour où 15 messages sont restés sans réponse pendant 90 minutes de rush de check-in, générant des clients frustrés qui ont réservé ailleurs.",
   challenges: [
-    "❌ Perte de leads : la première réponse > 15 min réduit les chances de booking de 35%",
-    "❌ Réponses inégales et sans traçabilité : chaque réceptionniste répond différemment",
-    "❌ Pas de collecte systématique de numéros : difficulté à contacter les leads non convertis",
+    "Perte de leads : la première réponse > 15 min réduit les chances de booking de 35%",
+    "Réponses inégales et sans traçabilité : chaque réceptionniste répond différemment",
+    "Pas de collecte systématique de numéros : difficulté à contacter les leads non convertis",
   ],
   howItWorks: [
     {
