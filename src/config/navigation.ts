@@ -19,10 +19,6 @@ export const navItems: NavItem[] = [
     href: "/etudes-de-cas",
   },
   {
-    label: "Simulateur",
-    href: "/simulateur-gain-temps",
-  },
-  {
     label: "À propos",
     href: "/a-propos",
   },
