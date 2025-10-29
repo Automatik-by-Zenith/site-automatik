@@ -12,8 +12,8 @@ export const LeadMagnet = () => {
       cal("ui", {
         theme: "light",
         cssVarsPerTheme: {
-          light: { "cal-brand": "#EFB50A" },
-          dark: { "cal-brand": "#EFB50A" }
+          light: { "cal-brand": "#E6B73F" },
+          dark: { "cal-brand": "#E6B73F" }
         },
         hideEventTypeDetails: true,
         layout: "month_view"
@@ -33,7 +33,7 @@ export const LeadMagnet = () => {
               </GradientText>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Réservez un créneau de 30 minutes en visio. Nous analyserons vos objectifs et vous 
+              Réservez un créneau de 30 minutes en visio. Nous analyserons vos objectifs et vous
               donnerons des pistes concrètes pour passer à l'action.
             </p>
             <p className="text-sm text-muted-foreground">
@@ -43,7 +43,7 @@ export const LeadMagnet = () => {
           <div className="w-full">
             <Cal
               namespace="30min"
-              calLink="thibault-roussel-fdxucl/30min"
+              calLink="arthur-rebouffat-fqoobc/30min"
               style={{ width: "100%", height: "100%", overflow: "scroll" }}
               config={{ layout: "month_view", theme: "light" }}
             />
