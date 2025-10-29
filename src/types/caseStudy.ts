@@ -16,8 +16,10 @@ export interface CaseStudyHighlight {
 export interface WorkflowStep {
   /** Numéro de l'étape */
   step: number;
-  /** Emoji représentant l'étape (ex: "📧", "🤖", "✅", "📊") */
+  /** Emoji représentant l'étape (ex: "📧", "🤖", "✅", "📊") - utilisé comme fallback si icon n'est pas fourni */
   emoji: string;
+  /** Nom de l'icône Lucide (ex: "Mail", "Zap", "CheckCircle", "BarChart3") */
+  icon?: string;
   /** Titre court de l'étape */
   title: string;
   /** Description détaillée (1-2 phrases) */

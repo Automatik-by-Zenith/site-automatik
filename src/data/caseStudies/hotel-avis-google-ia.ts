@@ -37,24 +37,28 @@ export const hotelAvisGoogleIA: CaseStudy = {
     {
       step: 1,
       emoji: "📧",
+      icon: "Mail",
       title: "Réception",
       description: "Scraping sécurisé via API : les nouveaux avis arrivent automatiquement, l'IA extrait note, commentaire et type de client",
     },
     {
       step: 2,
       emoji: "🤖",
+      icon: "Zap",
       title: "Génération",
       description: "Agent IA applique le prompt de marque : empathie, variantes selon la note, lignes rouges du secteur, cohérence tonale",
     },
     {
       step: 3,
       emoji: "✅",
+      icon: "CheckCircle",
       title: "Validation",
       description: "Envoi automatique après période de test et validation. Brouillon systématique pour garder le contrôle",
     },
     {
       step: 4,
       emoji: "📊",
+      icon: "BarChart3",
       title: "Suivi",
       description: "Tout est tracé : temps de réaction, sentiments détectés, variations de note par segment",
     },

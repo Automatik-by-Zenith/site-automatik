@@ -37,24 +37,28 @@ export const devisInstantenesIA: CaseStudy = {
     {
       step: 1,
       emoji: "📧",
+      icon: "Mail",
       title: "Extraction automatique",
       description: "Webhook email → parsing intelligent du contenu : nombre personnes, options, allergies, budget",
     },
     {
       step: 2,
       emoji: "🤖",
+      icon: "Zap",
       title: "Calcul métier",
       description: "Agent IA applique règles tarifaires : remises volume, seuils d'options, variations saisonnières",
     },
     {
       step: 3,
       emoji: "✅",
+      icon: "CheckCircle",
       title: "Validation humaine",
       description: "Devis généré en PDF + brouillon email. L'équipe vérifie et envoie en un clic",
     },
     {
       step: 4,
       emoji: "📊",
+      icon: "BarChart3",
       title: "Suivi et traçabilité",
       description: "Chaque devis est loggé : temps de réaction, montant, conversion, pour analytics et KPI",
     },

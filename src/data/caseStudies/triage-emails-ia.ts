@@ -37,24 +37,28 @@ export const triageEmailsIA: CaseStudy = {
     {
       step: 1,
       emoji: "📧",
+      icon: "Mail",
       title: "Tri intelligent",
       description: "Agent IA analyse chaque email : intent (support/vente/admin), sentiment (urgent/normal), catégorie",
     },
     {
       step: 2,
       emoji: "🤖",
+      icon: "Zap",
       title: "Génération de brouillons",
       description: "3 réponses proposées selon le ton : positive, neutre, négative. Variables dynamiques incluses",
     },
     {
       step: 3,
       emoji: "✅",
+      icon: "CheckCircle",
       title: "Validation et envoi",
       description: "Vous choisissez le brouillon, adaptez si besoin, et envoyez en 1 clic",
     },
     {
       step: 4,
       emoji: "📊",
+      icon: "BarChart3",
       title: "Reporting",
       description: "Tableau Notion avec KPI : mails traités/jour, temps par catégorie, tendances",
     },

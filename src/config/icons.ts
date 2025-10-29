@@ -1,4 +1,4 @@
-import { Clock, TrendingUp, Star, Users, Zap, CheckCircle, LucideIcon } from "lucide-react";
+import { Clock, TrendingUp, Star, Users, Zap, CheckCircle, Mail, BarChart3, Database, LucideIcon } from "lucide-react";
 
 export type IconMap = Record<string, LucideIcon>;
 
@@ -9,4 +9,7 @@ export const iconMap: IconMap = {
   Users,
   Zap,
   CheckCircle,
+  Mail,
+  BarChart3,
+  Database,
 };

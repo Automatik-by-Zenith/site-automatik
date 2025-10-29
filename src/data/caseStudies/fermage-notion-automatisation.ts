@@ -37,24 +37,28 @@ export const fermageNotionAutomatisation: CaseStudy = {
     {
       step: 1,
       emoji: "📋",
+      icon: "Database",
       title: "Structure Notion",
       description: "Base relationnel : Fermiers, Baux, Avenants, Parcelles, Paiements. Relations + vues filtrées par année/statut",
     },
     {
       step: 2,
       emoji: "🤖",
+      icon: "Zap",
       title: "Enregistrement des paiements",
       description: "Nouvelle ligne dans Paiements : date, montant, parcelles, notes. Notion applique automatiquement les tarifs et avenants",
     },
     {
       step: 3,
       emoji: "✅",
+      icon: "CheckCircle",
       title: "Génération quittance",
       description: "Vous générez et envoyez quittance en 1 clic : PDF + email brouillon avec tout paramétré",
     },
     {
       step: 4,
       emoji: "📊",
+      icon: "BarChart3",
       title: "Rapports impôts",
       description: "Vues Notion prêtes : totaux par fermier/année, état des paiements, anomalies, retards",
     },

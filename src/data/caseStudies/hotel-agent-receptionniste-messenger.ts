@@ -37,24 +37,28 @@ export const hotelAgentReceptionniste: CaseStudy = {
     {
       step: 1,
       emoji: "📧",
+      icon: "Mail",
       title: "Réception instantanée",
       description: "Agent réceptionniste IA avec persona (prénoms variables, ton chaleureux) accuse réception en <3s",
     },
     {
       step: 2,
       emoji: "🤖",
+      icon: "Zap",
       title: "Réponse intelligente",
       description: "Accès à base des infos hôtel, tarifs, FAQ, politiques. Répond directement ou demande le n° pour un suivi commercial",
     },
     {
       step: 3,
       emoji: "✅",
+      icon: "CheckCircle",
       title: "Escalade propre",
       description: "Si question complexe : collecte du n°, contexte → email récap à l'équipe avec tout en un seul message",
     },
     {
       step: 4,
       emoji: "📊",
+      icon: "BarChart3",
       title: "Suivi commercial",
       description: "Chaque conversation est classée (lead/info/support) et archivée pour un suivi humain intelligent",
     },
