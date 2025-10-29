@@ -12,8 +12,8 @@ export const LeadMagnet = () => {
       cal("ui", {
         theme: "light",
         cssVarsPerTheme: {
-          light: { "cal-brand": "#E6B73F" },
-          dark: { "cal-brand": "#E6B73F" }
+          light: { "cal-brand": "#efb506" },
+          dark: { "cal-brand": "#efb506" }
         },
         hideEventTypeDetails: true,
         layout: "month_view"

@@ -43,8 +43,8 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" aria-hidden="true" />
-                <a href="mailto:contact@automatik.com" className="hover:text-primary transition-colors">
-                  contact@automatik.com
+                <a href={`mailto:${companyInfo.email}`} className="hover:text-primary transition-colors">
+                  {companyInfo.email}
                 </a>
               </li>
               <li className="flex items-center gap-2">
