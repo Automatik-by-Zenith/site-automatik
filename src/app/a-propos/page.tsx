@@ -291,7 +291,7 @@ const About = () => {
                   </BlockQuote>
                   <div className="flex flex-col items-center gap-4 pt-4">
                     <Button asChild size="lg" className="group bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
-                      <Link href="/contact">
+                      <Link href="/reservation">
                         Réserver un RDV visio de 30 min
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                       </Link>

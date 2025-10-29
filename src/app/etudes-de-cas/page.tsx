@@ -118,7 +118,7 @@ function EtudesDeCasContent() {
                 className="bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
                 asChild
               >
-                <Link href="/contact">
+                <Link href="/reservation">
                   Réserver un RDV visio de 30 min
                   <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>

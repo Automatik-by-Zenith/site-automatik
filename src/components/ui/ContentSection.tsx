@@ -2,6 +2,7 @@ import { LucideIcon } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from './card';
 import { Separator } from './separator';
+import { MarkdownText } from './markdown-text';
 
 export interface ContentSectionProps {
   title: string;
@@ -43,7 +44,7 @@ export const ContentSection = ({
                   <li key={idx} className="flex items-start gap-3">
                     {Icon && <Icon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />}
                     {iconElement && <span className="text-primary mt-1" aria-hidden="true">{iconElement}</span>}
-                    <span className="text-muted-foreground">{item}</span>
+                    <MarkdownText className="text-muted-foreground">{item}</MarkdownText>
                   </li>
                 ))}
               </ul>

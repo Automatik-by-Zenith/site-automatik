@@ -6,11 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ContentSection } from "@/components/ui/ContentSection";
-import { ArrowLeft, ArrowRight, Clock, TrendingUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, TrendingUp, Users, CheckCircle } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies/index";
-import { CaseStudy, CaseStudyHighlight } from "@/types/caseStudy";
+import { CaseStudyHighlight } from "@/types/caseStudy";
 import { iconMap } from "@/config/icons";
 import { GradientText } from "@/components/ui/GradientText";
+import { WorkflowSteps } from "@/components/ui/workflow-steps";
 
 interface EtudeDeCasDetailProps {
   params: Promise<{ id: string }>;
@@ -123,27 +124,8 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
       <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Comment ça marche</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {etude.howItWorks.map((step, idx) => (
-                <Card key={idx} variant="glass">
-                  <CardContent className="p-6 space-y-3">
-                    <div className="flex items-start gap-3">
-                      <span className="text-3xl">{step.emoji}</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">
-                            Étape {step.step}
-                          </span>
-                        </div>
-                        <h3 className="text-lg font-semibold">{step.title}</h3>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8">Comment ça marche</h2>
+            <WorkflowSteps steps={etude.howItWorks} />
           </div>
         </div>
       </section>
@@ -213,14 +195,14 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
               </Card>
               <Card variant="glass">
                 <CardContent className="p-6 space-y-3">
-                  <span className="text-3xl">👥</span>
+                  <Users className="w-8 h-8 text-primary" aria-hidden="true" />
                   <h3 className="font-semibold">Formation</h3>
                   <p className="text-sm text-muted-foreground">{etude.deployment.training}</p>
                 </CardContent>
               </Card>
               <Card variant="glass">
                 <CardContent className="p-6 space-y-3">
-                  <span className="text-3xl">✅</span>
+                  <CheckCircle className="w-8 h-8 text-primary" aria-hidden="true" />
                   <h3 className="font-semibold">Validation</h3>
                   <p className="text-sm text-muted-foreground">{etude.deployment.validation}</p>
                 </CardContent>
@@ -257,7 +239,7 @@ export async function EtudeDeCasDetail({ params }: EtudeDeCasDetailProps) {
                 className="bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
                 asChild
               >
-                <Link href="/contact">
+                <Link href="/reservation">
                   Réserver un RDV visio de 30 min
                   <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>

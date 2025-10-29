@@ -91,7 +91,7 @@ const ServicesPage = () => {
               </Card>
 
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
-                <Link href="/contact">
+                <Link href="/reservation">
                   Discuter d'un projet de pilotage
                   <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
@@ -174,7 +174,7 @@ const ServicesPage = () => {
               </Card>
 
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
-                <Link href="/contact">
+                <Link href="/reservation">
                   Démarrer un projet web
                   <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
@@ -256,7 +256,7 @@ const ServicesPage = () => {
               </Card>
 
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
-                <Link href="/contact">
+                <Link href="/reservation">
                   Démarrer un projet d'automatisation
                   <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
@@ -362,7 +362,7 @@ const ServicesPage = () => {
               </Card>
 
               <Button className="bg-primary hover:shadow-lg hover:shadow-primary/50" asChild>
-                <Link href="/contact">
+                <Link href="/reservation">
                   Réserver votre formation
                   <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
@@ -413,7 +413,7 @@ const ServicesPage = () => {
                 className="bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
                 asChild
               >
-                <Link href="/contact">
+                <Link href="/reservation">
                   Réserver un créneau
                   <Calendar className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>

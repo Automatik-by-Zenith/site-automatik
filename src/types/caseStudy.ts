@@ -1,16 +1,4 @@
 /**
- * Représente un indicateur de performance clé affiché sous forme de carte
- */
-export interface CaseStudyMetric {
-  /** Libellé de la métrique (ex: "Taux de réponse") */
-  label: string;
-  /** Valeur de la métrique (ex: "95%", "12h") */
-  value: string;
-  /** Nom de l'icône Lucide (ex: "Clock", "TrendingUp", "CheckCircle") */
-  icon: string;
-}
-
-/**
  * Représente un point fort mis en avant dans l'étude de cas
  */
 export interface CaseStudyHighlight {
@@ -23,6 +11,42 @@ export interface CaseStudyHighlight {
 }
 
 /**
+ * Représente une étape du workflow "Comment ça marche"
+ */
+export interface WorkflowStep {
+  /** Numéro de l'étape */
+  step: number;
+  /** Emoji représentant l'étape (ex: "📧", "🤖", "✅", "📊") */
+  emoji: string;
+  /** Titre court de l'étape */
+  title: string;
+  /** Description détaillée (1-2 phrases) */
+  description: string;
+}
+
+/**
+ * Représente le déploiement et la formation
+ */
+export interface DeploymentInfo {
+  /** Durée du déploiement (ex: "2-3 semaines") */
+  duration: string;
+  /** Durée de formation estimée (ex: "45 minutes") */
+  training: string;
+  /** Description du processus de validation */
+  validation: string;
+}
+
+/**
+ * Représente un témoignage client
+ */
+export interface Testimonial {
+  /** Citation du client (80-120 caractères) */
+  quote: string;
+  /** Auteur du témoignage (ex: "Prénom, Fonction") */
+  author: string;
+}
+
+/**
  * Structure complète d'une étude de cas
  */
 export interface CaseStudy {
@@ -32,30 +56,36 @@ export interface CaseStudy {
   title: string;
   /** Résumé court affiché dans les cartes */
   summary: string;
-  /** Sous-titre descriptif */
-  subtitle: string;
   /** Catégorie de l'étude de cas (ex: "hotellerie", "commercial", "support") */
   category: string;
   /** Nom du client (peut être anonymisé) */
   client: string;
   /** Secteur d'activité */
   sector: string;
+  /** Timeline de déploiement (ex: "Déployé en 2-3 semaines") */
+  timeline: string;
   /** Liste des outils utilisés (ex: ["openai", "n8n", "google"]) */
   tools: string[];
-  /** Métriques clés affichées en haut de l'étude de cas */
-  metrics: CaseStudyMetric[];
   /** Points forts mis en avant avec évolution avant/après */
   highlights: CaseStudyHighlight[];
   /** Contexte et situation initiale du client */
   context: string;
-  /** Liste des problèmes rencontrés */
-  problem: string[];
-  /** Liste des solutions apportées */
-  solution: string[];
-  /** Liste des résultats obtenus */
+  /** Le moment déclic qui a motivé le changement (optionnel) */
+  trigger?: string;
+  /** Liste des défis identifiés */
+  challenges: string[];
+  /** Étapes du workflow "Comment ça marche" */
+  howItWorks: WorkflowStep[];
+  /** Liste des résultats obtenus (supports markdown **bold**) */
   results: string[];
-  /** Stack technique détaillée */
-  stack: string;
-  /** Prochaines étapes et évolutions possibles */
-  nextSteps: string[];
+  /** Description de l'impact global */
+  impact: string;
+  /** Témoignage client */
+  testimonial: Testimonial;
+  /** Pour qui cette solution est faite */
+  idealFor: string[];
+  /** Informations de déploiement */
+  deployment: DeploymentInfo;
+  /** Opportunités et évolutions possibles */
+  opportunities: string[];
 }

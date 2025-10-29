@@ -96,7 +96,7 @@ const FAQContent = () => {
                     className="bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
                     asChild
                   >
-                    <Link href="/contact">Contactez-nous</Link>
+                    <Link href="/reservation">Réserver un RDV visio</Link>
                   </Button>
                 </CardContent>
               </Card>
